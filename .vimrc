@@ -1,4 +1,6 @@
 set rnu
+set nu
+
 syntax  on
 set expandtab
 set tabstop=4
