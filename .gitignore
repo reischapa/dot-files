@@ -2,6 +2,7 @@
 
 !.gitignore
 !.vimrc
+!.vim
 !.ideavimrc
 !.setupEnv.sh
 
