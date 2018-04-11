@@ -4,7 +4,9 @@ sudo apt-get remove --purge libreoffice*
 
 sudo apt-get install git vim
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo add-apt-repository ppa:lyzardking/ubuntu-make
+sudo apt update
+sudo apt install ubuntu-make
 
 
 
