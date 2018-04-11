@@ -3,6 +3,8 @@
 !.gitignore
 !.vimrc
 !.vim
+!.vim/bundle
+!.vim/bundle/*
 !.ideavimrc
 !.setupEnv.sh
 
