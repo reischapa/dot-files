@@ -50,13 +50,19 @@ execute tern#Enable()
 
 " ale
 let g:ale_fixers = {
-\   'javascript': ['prettier','eslint']
+\   'javascript': ['eslint']
 \}
 
 " keyboard bindings
 
 nnoremap <F2> :wa <CR>
+vnoremap <F2> :wa <CR>
+
 nnoremap <F3> :wa <CR> :! npm t \| less <CR>
+vnoremap <F3> :wa <CR> :! npm t \| less <CR>
+
+nnoremap <F4> :wa <CR> :! npm t <CR>
+vnoremap <F4> :wa <CR> :! npm t <CR>
 
 nnoremap j gj
 nnoremap k gk
@@ -76,7 +82,20 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+set termencoding=utf-8
+set guifont=Monospace\ 14
+set background=dark
+set belloff=all
 
+"autorun
 
+autocmd VimEnter * ALEDisable
+autocmd VimEnter * NERDTree 
+autocmd VimEnter * wincmd l 
 
+"ex commands
+
+command W w
+command Wa wa
+command Q qa
 

@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/vim-hug-neovim-rpc"]
 	path = .vim/bundle/vim-hug-neovim-rpc
 	url = git@github.com:roxma/vim-hug-neovim-rpc.git
+[submodule ".vim/bundle/vim-alda"]
+	path = .vim/bundle/vim-alda
+	url = https://github.com/daveyarwood/vim-alda.git
