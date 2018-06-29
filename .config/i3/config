@@ -1,6 +1,9 @@
 set $mod Mod4
 set $mod2 Mod1
+set $term gnome-terminal
+
 floating_modifier $mod
+
 font pango:Ubuntu Sans Mono 12 
 
 set $monitor eDP-1 
@@ -46,8 +49,8 @@ bindsym $mod+u resize grow height 20 px or 5 ppt
 bindsym $mod+i resize shrink height 20 px or 5 ppt
 bindsym $mod+o resize grow width 20 px or 5 ppt
 
-bindsym $mod+t exec "i3-msg split h && xterm" 
-bindsym $mod+Shift+t exec "i3-msg split v && xterm"
+bindsym $mod+t exec i3-msg split h && $term
+bindsym $mod+Shift+t exec i3-msg split v && $term 
 
 bindsym $mod+w kill
 
@@ -66,40 +69,43 @@ bindsym $mod+c focus child
 bindsym $mod+Shift+p reload
 bindsym $mod+p restart
 
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
 bindsym Mod1+Tab workspace back_and_forth
-bindsym Control+Mod1+l exec gnome-screensaver-command -l 
+bindsym Control+Mod1+l exec ~/bin/c-screensaver.sh 
 
-bindsym $mod+F5 exec "sudo brightlight -p -d 3"
-bindsym $mod+F6 exec "sudo brightlight -p -i 3"
-#bindsym $mod+F7 exec "sudo brightlight -p 0" 
-bindsym $mod+F8 exec --no-startup-id "bash ~/.config/i3/scripts/screencheck.sh $monitor $monitor2"
+bindsym $mod+F5 exec "sudo brightlight -p -d 4"
+bindsym $mod+F6 exec "sudo brightlight -p -i 4"
+bindsym $mod+F8 exec --no-startup-id "bash ~/bin/c-screentoggle.sh $monitor $monitor2"
 
 bindsym $mod+F10 exec "amixer -q sset Master,0 toggle && amixer -q sset Speaker,0 unmute && amixer -q sset Headphone,0 unmute"
 bindsym $mod+F11 exec "amixer -q sset Master,0 3- unmute"
 bindsym $mod+F12 exec "amixer -q sset Master,0 3+ unmute"
 
+bindsym $mod+5 exec "sudo brightlight -p -d 4"
+bindsym $mod+6 exec "sudo brightlight -p -i 4"
+bindsym $mod+8 exec --no-startup-id "bash ~/bin/c-screentoggle.sh $monitor $monitor2"
+
+bindsym $mod+0 exec "amixer -q sset Master,0 toggle && amixer -q sset Speaker,0 unmute && amixer -q sset Headphone,0 unmute"
+bindsym $mod+minus exec "amixer -q sset Master,0 3- unmute"
+bindsym $mod+equal exec "amixer -q sset Master,0 3+ unmute"
+
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 3- unmute"
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 3+ unmute"
 
 exec --no-startup-id nm-applet
-exec --no-startup-id "discord"
-exec --no-startup-id "thunderbird"
-exec --no-startup-id "redshift"
+exec --no-startup-id redshift
 
-exec xinput set-prop 12 279 1
-exec xinput set-prop 12 287 1 
-exec xinput set-prop 13 279 1
-exec xinput set-prop 13 287 1 
-exec xinput set-prop 14 279 1
-exec xinput set-prop 14 287 1 
+# enables tap to click and middle click emulation
+exec ~/bin/c-setup-touchpad.sh 12 280 288
+exec --no-startup-id compton -b
 
 exec_always --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
-exec_always --no-startup-id $HOME/.config/i3/polybarBootstrap.sh
+exec_always --no-startup-id ~/bin/c-polybarBootstrap.sh
+exec_always --no-startup-id feh --bg-scale /home/chapa/Pictures/background.jpg 
 
-#https://thomashunter.name/i3-configurator/
-#colors
+# https://thomashunter.name/i3-configurator/
+# colors
 client.focused          #FF003F #FF003F #FFFFFF #2E9EF4   #285577
 client.focused_inactive #5F676A #5F676A #FFFFFF #484E50   #5F676A
 client.unfocused        #333333 #333333 #888888 #292D2E   #222222
@@ -109,6 +115,7 @@ client.placeholder      #0C0C0C #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 
+# default configuration
 #client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
 #client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 #client.unfocused        #333333 #222222 #888888 #292d2e   #222222

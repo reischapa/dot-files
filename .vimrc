@@ -90,7 +90,9 @@ set belloff=all
 "autorun
 
 autocmd VimEnter * ALEDisable
-autocmd VimEnter * NERDTree 
+if exists("g:OpenNERDTree") 
+  autocmd VimEnter * NERDTree 
+endif
 autocmd VimEnter * wincmd l 
 
 "ex commands

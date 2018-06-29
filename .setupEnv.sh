@@ -7,6 +7,8 @@ cd
 sudo apt install git vim curl python3-pip
 sudo apt install keepass2
 sudo apt install docker docker-compose
+sudo apt install i3-wm
+sudo apt install compton
 
 sudo apt-get remove --purge libreoffice*
 

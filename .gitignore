@@ -9,4 +9,5 @@
 !.setupEnv.sh
 !.config/i3
 !.config/polybar
+!bin/c-*
 
