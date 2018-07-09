@@ -10,6 +10,11 @@ sudo apt install docker docker-compose
 sudo apt install i3-wm
 sudo apt install compton
 
+#zsh
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+#remove libreoffice
 sudo apt-get remove --purge libreoffice*
 
 #ubuntu make
@@ -44,7 +49,8 @@ cd ~/.vim/bundle/tern_for_vim && npm install && cd
  
 #optionals
 
+sudo ln -sv $HOME/bin/svim /usr/bin/svim
 
-
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 

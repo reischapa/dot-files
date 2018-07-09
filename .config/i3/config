@@ -99,6 +99,7 @@ exec --no-startup-id redshift
 # enables tap to click and middle click emulation
 exec ~/bin/c-setup-touchpad.sh 12 280 288
 exec --no-startup-id compton -b
+exec xscreensaver -no-splash
 
 exec_always --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
 exec_always --no-startup-id ~/bin/c-polybarBootstrap.sh

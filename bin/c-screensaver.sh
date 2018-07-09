@@ -1,2 +1,2 @@
 #!/bin/bash
-gnome-screensaver-command -l
+xscreensaver-command -lock
