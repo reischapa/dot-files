@@ -10,4 +10,5 @@
 !.config/i3
 !.config/polybar
 !bin/c-*
-
+!.setupEnvFiles
+!.zshrc
