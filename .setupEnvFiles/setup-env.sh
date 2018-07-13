@@ -9,6 +9,7 @@ sudo apt install keepass2
 sudo apt install docker docker-compose
 sudo apt install i3-wm
 sudo apt install compton
+sudo apt install pulsemixer
 
 #zsh
 sudo apt install zsh

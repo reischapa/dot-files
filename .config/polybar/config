@@ -1,0 +1,159 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #222
+background-alt = #ff003f
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+progress-bar = #ff003f
+
+[bar/example]
+width = 100%
+height = 30 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0 
+padding-right = 4
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+
+modules-left = memory cpu
+modules-right = backlight volume battery-bar battery-time  date
+
+tray-position = left 
+tray-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+label = CPU: 
+
+bar-load-indicator =
+bar-load-width = 10 
+bar-load-foreground-0 = ${colors.progress-bar}
+bar-load-fill = ▐
+bar-load-empty = ▐
+bar-load-empty-foreground = #444444
+
+format = <label> <bar-load>
+
+[module/memory]
+type = internal/memory
+interval = 1
+label = RAM:
+
+bar-used-indicator =
+bar-used-width = 10 
+bar-used-foreground-0 = ${colors.progress-bar} 
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
+
+format = <label> <bar-used>
+
+[module/battery-bar]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+
+label-charging = Battery ⬆️ :
+label-discharging = Battery ⬇️ : 
+
+format-charging = <label-charging> <bar-capacity>
+format-discharging = <label-discharging> <bar-capacity>
+
+bar-capacity-indicator =
+bar-capacity-width = 10 
+bar-capacity-foreground-0 = ${colors.progress-bar} 
+bar-capacity-fill = ▐
+bar-capacity-empty = ▐
+bar-capacity-empty-foreground = #444444
+
+format = <label> <bar-capacity> 
+
+[module/battery-time]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+
+time-format = %H:%M
+
+label-charging = %time%
+label-discharging = %time% 
+
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+
+[module/date]
+type = internal/date
+interval = 1
+date = " %Y-%m-%d"
+time = %H:%M:%S
+
+format-prefix-foreground = ${colors.foreground-alt}
+
+label = %date% %time%
+
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = true
+
+bar-volume-indicator =
+bar-volume-width = 10 
+bar-volume-foreground-0 = ${colors.progress-bar}
+bar-volume-fill = ▐
+
+bar-volume-empty = ▐
+bar-volume-empty-foreground = #444444
+
+label-volume = Volume: 
+
+mutedLabel = muted;
+label-muted = Volume: muted  
+
+format-volume = <label-volume> <bar-volume>
+format-muted = <label-muted> 
+
+[module/backlight]
+
+type = internal/backlight
+card = intel_backlight
+
+label = Backlight: 
+
+bar-indicator =
+bar-width = 10 
+bar-foreground-0 = ${colors.progress-bar}
+bar-fill = ▐
+bar-empty = ▐
+bar-empty-foreground = #444444
+
+format = <label> <bar>
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+

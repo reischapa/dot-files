@@ -72,37 +72,32 @@ bindsym $mod+p restart
 bindsym $mod+Shift+e exec i3-msg exit
 
 bindsym Mod1+Tab workspace back_and_forth
-bindsym Control+Mod1+l exec ~/bin/c-screensaver.sh 
-
-bindsym $mod+F5 exec "sudo brightlight -p -d 4"
-bindsym $mod+F6 exec "sudo brightlight -p -i 4"
-bindsym $mod+F8 exec --no-startup-id "bash ~/bin/c-screentoggle.sh $monitor $monitor2"
-
-bindsym $mod+F10 exec "amixer -q sset Master,0 toggle && amixer -q sset Speaker,0 unmute && amixer -q sset Headphone,0 unmute"
-bindsym $mod+F11 exec "amixer -q sset Master,0 3- unmute"
-bindsym $mod+F12 exec "amixer -q sset Master,0 3+ unmute"
+bindsym Control+Mod1+l exec c-screensaver 
 
 bindsym $mod+5 exec "sudo brightlight -p -d 4"
 bindsym $mod+6 exec "sudo brightlight -p -i 4"
-bindsym $mod+8 exec --no-startup-id "bash ~/bin/c-screentoggle.sh $monitor $monitor2"
 
-bindsym $mod+0 exec "amixer -q sset Master,0 toggle && amixer -q sset Speaker,0 unmute && amixer -q sset Headphone,0 unmute"
-bindsym $mod+minus exec "amixer -q sset Master,0 3- unmute"
-bindsym $mod+equal exec "amixer -q sset Master,0 3+ unmute"
+bindsym $mod+7 exec --no-startup-id c-screen-mirror $monitor $monitor2
+bindsym $mod+8 exec --no-startup-id c-screen-toggle $monitor $monitor2
+# bindsym $mod+9 exec xrandr --output $monitor2 --output $monitor --off
 
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 3- unmute"
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 3+ unmute"
+bindsym $mod+0 exec pulsemixer --toggle-mute
+bindsym $mod+minus exec pulsemixer --change-volume -2 
+bindsym $mod+equal exec pulsemixer --change-volume +2
+
+bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -2
+bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +2
 
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 
 # enables tap to click and middle click emulation
-exec ~/bin/c-setup-touchpad.sh 12 280 288
 exec --no-startup-id compton -b
 exec xscreensaver -no-splash
 
+exec_always c-setup-touchpad
 exec_always --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
-exec_always --no-startup-id ~/bin/c-polybarBootstrap.sh
+exec_always --no-startup-id c-polybar-bootstrap
 exec_always --no-startup-id feh --bg-scale /home/chapa/Pictures/background.jpg 
 
 # https://thomashunter.name/i3-configurator/
