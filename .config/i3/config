@@ -74,8 +74,10 @@ bindsym $mod+Shift+e exec i3-msg exit
 bindsym Mod1+Tab workspace back_and_forth
 bindsym Control+Mod1+l exec c-screensaver 
 
-bindsym $mod+5 exec "sudo brightlight -p -d 4"
-bindsym $mod+6 exec "sudo brightlight -p -i 4"
+
+bindsym $mod+4 exec c-toggle-laptop-screen-on-off
+bindsym $mod+5 exec xbacklight - 4 -time 10
+bindsym $mod+6 exec xbacklight + 4 -time 10
 
 bindsym $mod+7 exec --no-startup-id c-screen-mirror $monitor $monitor2
 bindsym $mod+8 exec --no-startup-id c-screen-toggle $monitor $monitor2

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+numCompare() {
+   awk -v n1="$1" -v n2="$2" 'BEGIN {printf "%s " (n1<n2?"<":">=") " %s\n", n1, n2}';
+}
+
+xbacklightResult=`xbacklight`;
+
+if (( $(awk "BEGIN {print ("${xbacklightResult}" > 0)}") )); then
+  echo $xbacklightResult > $HOME/bin/lastBrightness;
+  xbacklight = 0 -time 10;
+else
+  lastBrightness=`cat $HOME/bin/lastBrightness`;
+  echo "$lastBrightness";
+  xbacklight -set "$lastBrightness" -time 10;
+fi
+  
