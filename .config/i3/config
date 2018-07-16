@@ -86,6 +86,7 @@ bindsym $mod+0 exec pulsemixer --toggle-mute
 bindsym $mod+minus exec pulsemixer --change-volume -2 
 bindsym $mod+equal exec pulsemixer --change-volume +2
 
+bindsym XF86AudioMute exec pulsemixer --toggle-mute 
 bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -2
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +2
 
@@ -93,8 +94,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 
 exec --no-startup-id compton -b
-exec xscreensaver -no-splash
-exec workspace $ws1
+exec --no-startup-id xscreensaver -no-splash
+exec --no-startup i3-msg workspace $ws1
 exec --no-startup-id c-screen-toggle $monitor $monitor2 && i3-msg restart
 
 exec_always --no-startup-id c-setup-touchpad
