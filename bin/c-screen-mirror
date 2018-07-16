@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+if [ -z "$1" ] || [ -z "$2" ] ; then
+  echo "required variables not set";
+else
+  xrandr --output eDP-1 --output "$1" --same-as "$2";
+fi;
+
+
+
