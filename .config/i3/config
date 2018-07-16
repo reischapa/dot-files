@@ -6,13 +6,13 @@ floating_modifier $mod
 
 font pango:Ubuntu Sans Mono 12 
 
-set $monitor eDP-1 
-set $monitor2 HDMI-1  
+set $monitor eDP1 
+set $monitor2 HDMI1  
 
-set $ws1 "1:a"
-set $ws2 "2:s"
-set $ws3 "3:d"
-set $ws4 "4:f"
+set $ws1 "A"
+set $ws2 "S"
+set $ws3 "D"
+set $ws4 "F"
 
 workspace $ws1 output $monitor
 workspace $ws2 output $monitor
@@ -79,8 +79,8 @@ bindsym $mod+4 exec c-toggle-laptop-screen-on-off
 bindsym $mod+5 exec xbacklight - 4 -time 10
 bindsym $mod+6 exec xbacklight + 4 -time 10
 
-bindsym $mod+7 exec --no-startup-id c-screen-mirror $monitor $monitor2
-bindsym $mod+8 exec --no-startup-id c-screen-toggle $monitor $monitor2
+bindsym $mod+7 exec --no-startup-id c-screen-mirror $monitor $monitor2 && i3-msg restart 
+bindsym $mod+8 exec --no-startup-id c-screen-toggle $monitor $monitor2 && i3-msg restart
 
 bindsym $mod+0 exec pulsemixer --toggle-mute
 bindsym $mod+minus exec pulsemixer --change-volume -2 
@@ -94,12 +94,14 @@ exec --no-startup-id redshift
 
 exec --no-startup-id compton -b
 exec xscreensaver -no-splash
+exec workspace $ws1
+exec --no-startup-id c-screen-toggle $monitor $monitor2 && i3-msg restart
 
-exec_always --no-startup-id c-screen-toggle $monitor $monitor2
 exec_always --no-startup-id c-setup-touchpad
 exec_always --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
 exec_always --no-startup-id c-polybar-bootstrap
 exec_always --no-startup-id feh --bg-scale /home/chapa/Pictures/background.jpg 
+
 
 # https://thomashunter.name/i3-configurator/
 # colors
