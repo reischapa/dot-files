@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# First argument: Primary monitor
-# Second argument: Secondary monitor
-if  xrandr | grep -q "$2 d"; then
-    xrandr --output "$2" --off
+monitor1=`cat $HOME/bin/runtime/monitor1`
+monitor2=`cat $HOME/bin/runtime/monitor2`
+
+if  xrandr | grep -q "$monitor2 d"; then
+    xrandr --output "$monitor2" --off
 else
-    xrandr --output "$2" --auto
-    xrandr --output "$2" --above "$1"
+    xrandr --output "$monitor2" --auto
+    xrandr --output "$monitor2" --above "$monitor1"
 fi

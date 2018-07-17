@@ -1,0 +1,8 @@
+#!/bin/bash
+
+monitor1=`xrandr | grep -E "HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}' | rofi -dmenu -p "Monitor 1"`
+monitor2=`xrandr | grep -E "HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}' | rofi -dmenu -p "Monitor 2"`
+
+echo $monitor1 > $HOME/bin/runtime/monitor1
+echo $monitor2 > $HOME/bin/runtime/monitor2
+

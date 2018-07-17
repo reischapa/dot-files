@@ -7,10 +7,10 @@ numCompare() {
 xbacklightResult=`xbacklight`;
 
 if (( $(awk "BEGIN {print ("${xbacklightResult}" > 0)}") )); then
-  echo $xbacklightResult > $HOME/bin/lastBrightness;
+  echo $xbacklightResult > $HOME/bin/runtime/lastBrightness;
   xbacklight = 0 -time 10;
 else
-  lastBrightness=`cat $HOME/bin/lastBrightness`;
+  lastBrightness=`cat $HOME/bin/runtime/lastBrightness`;
   echo "$lastBrightness";
   xbacklight -set "$lastBrightness" -time 10;
 fi
