@@ -1,0 +1,5 @@
+#!/bin/bash
+
+touchpad=`xinput list --name-only | grep -v -E "[vV]irtual" | rofi -dmenu -p "Touchpad device name: "`
+
+echo "$touchpad" > "$HOME/bin/runtime/touchpad"
