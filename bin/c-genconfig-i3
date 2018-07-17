@@ -1,16 +1,25 @@
 #!/bin/bash
 
-if [ ! -f "$HOME/bin/runtime/monitor1" ] || [ ! -f "$HOME/bin/runtime/monitor2" ]; then
-  echo "Monitor runtime files are missing. Fill the information."
-  c-choose-screens
-  exit 1
+i3_config_file="$HOME/.config/i3/config"
+i3_config_template_file="$HOME/.config/i3/config.template"
+monitor1_runtime_file="$HOME/bin/runtime/monitor1"
+monitor2_runtime_file="$HOME/bin/runtime/monitor2"
+
+if ! [ -z "$1" ] && [ "$1"="--force" ]; then
+  rm -r "$monitor1_runtime_file"
+  rm -r "$monitor2_runtime_file"
 fi
 
-monitor1=`cat $HOME/bin/runtime/monitor1`
-monitor2=`cat $HOME/bin/runtime/monitor2`
+if [ ! -f "$monitor1_runtime_file" ] || [ ! -f "$monitor2_runtime_file" ]; then
+  echo "Monitor runtime files are missing. Fill the information."
+  c-choose-screens
+fi
 
-rm -f "$HOME/.config/i3/config"
+monitor1=`cat "$monitor1_runtime_file"`
+monitor2=`cat "$monitor2_runtime_file"`
 
-sed -e 's/{{monitor1}}/'"$monitor1"'/g' "$HOME/.config/i3/config.template" | sed -e 's/{{monitor2}}/'"$monitor2"'/g' > "$HOME/.config/i3/config"
+rm -f "$i3_config_file"
+
+sed -e 's/{{monitor1}}/'"$monitor1"'/g' "$i3_config_template_file" | sed -e 's/{{monitor2}}/'"$monitor2"'/g' > "$i3_config_file"
 
 i3-msg restart
