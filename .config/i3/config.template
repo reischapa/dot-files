@@ -65,6 +65,7 @@ bindsym $mod+space focus mode_toggle
 
 bindsym $mod+v focus parent
 bindsym $mod+c focus child 
+bindsym $mod+z exec keepass2 `ls $HOME/*.kdbx | dmenu -p "Choose database: "`
 
 bindsym $mod+Shift+p reload
 bindsym $mod+p restart
