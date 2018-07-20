@@ -12,6 +12,11 @@ sudo apt install i3-wm
 sudo apt install compton
 sudo apt install pulsemixer
 sudo apt install pauvcontrol
+sudo apt install libgtk-3-dev
+sudo apt install liblightdm-gobject-1-dev
+sudo apt install terminator
+sudo apt install xfce4-power-manager
+
 
 #zsh
 sudo apt install zsh
@@ -51,4 +56,6 @@ sudo ln -sv $HOME/bin/svim /usr/bin/svim
 
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
+# lightdm-mini-greeter
+# https://github.com/prikhi/lightdm-mini-greeter
 

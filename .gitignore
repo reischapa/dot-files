@@ -6,7 +6,7 @@
 !.vim/bundle
 !.vim/bundle/*
 !.ideavimrc
-!.setupEnv.sh
+!.setupEnvFiles
 !.config/i3
 !.config/polybar
 !bin/c-*

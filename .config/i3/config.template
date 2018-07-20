@@ -1,10 +1,10 @@
 set $mod Mod4
 set $mod2 Mod1
-set $term gnome-terminal
+set $term terminator 
 
 floating_modifier $mod
 
-font pango:Ubuntu Sans Mono 12 
+font pango:Liberation Mono Regular 14 
 
 set $monitor1 {{monitor1}} 
 set $monitor2 {{monitor2}}  
@@ -96,6 +96,7 @@ exec --no-startup-id redshift
 
 exec --no-startup-id compton -b
 exec --no-startup-id xscreensaver -no-splash
+exec --no-startup-id xfce4-power-manager 
 exec --no-startup i3-msg workspace $ws1
 exec --no-startup-id c-screen-toggle && i3-msg restart
 
