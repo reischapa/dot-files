@@ -94,3 +94,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 zstyle ":completion:*:commands" rehash 1
+
+setopt no_share_history
