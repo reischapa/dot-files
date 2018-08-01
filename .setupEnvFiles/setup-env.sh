@@ -59,3 +59,9 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 # lightdm-mini-greeter
 # https://github.com/prikhi/lightdm-mini-greeter
 
+# install the lock-on-suspend service
+
+sudo cp ~/.setupEnvFiles/wakelock.service /etc/systemd/system/
+sudo chmod a+x /etc/systemd/system/wakelock.service
+sudo systemctl enable wakelock
+

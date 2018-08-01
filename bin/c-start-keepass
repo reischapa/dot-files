@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+database_repo="$HOME"
+
+database_paths=`find "$HOME" -maxdepth 1 -name "*.kdbx"`
+
+if [ -z "$database_paths" ]; then
+  echo "No database files found in repository "$HOME". Exiting..."
+  exit 1
+fi
+
+chosen_database=`echo "$database_paths" | rofi -dmenu -p "Choose Database: "`
+wait
+
+if [ -z "$chosen_database" ]; then
+  echo "No database path given. Exiting..."
+  exit 1
+fi
+
+keepass2 "$chose_database"
+
