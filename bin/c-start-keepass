@@ -2,10 +2,10 @@
 
 database_repo="$HOME"
 
-database_paths=`find "$HOME" -maxdepth 1 -name "*.kdbx"`
+database_paths=`find "$database_repo" -maxdepth 1 -name "*.kdbx"`
 
 if [ -z "$database_paths" ]; then
-  echo "No database files found in repository "$HOME". Exiting..."
+  echo "No database files found in database repository "$database_repo". Exiting..."
   exit 1
 fi
 
