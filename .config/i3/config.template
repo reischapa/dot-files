@@ -29,10 +29,10 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 30 px 
+bindsym $mod+Shift+j move down 30 px
+bindsym $mod+Shift+k move up 30 px 
+bindsym $mod+Shift+l move right 30 px
 
 bindsym $mod+n exec i3-msg move container to workspace $ws1 
 bindsym $mod+m exec i3-msg move container to workspace $ws2 
@@ -54,8 +54,8 @@ bindsym $mod+Shift+t exec i3-msg split v && $term
 
 bindsym $mod+w kill
 
-bindsym $mod+colon exec "rofi -show run"
-bindsym $mod+Shift+colon exec "i3-msg split v && rofi -show run"
+bindsym $mod+colon exec rofi -show run
+bindsym $mod+Shift+colon exec i3-msg split v && rofi -show run
 
 bindsym $mod+slash exec "rofi -show window" 
 bindsym $mod+g fullscreen toggle
