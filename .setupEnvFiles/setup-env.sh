@@ -2,7 +2,6 @@
 
 cd
 
-
 #packages
 
 sudo apt install git vim curl python3-pip
@@ -64,4 +63,10 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 sudo cp ~/.setupEnvFiles/wakelock.service /etc/systemd/system/
 sudo chmod a+x /etc/systemd/system/wakelock.service
 sudo systemctl enable wakelock
+
+mkdir -p ~/bin
+
+git clone git@github.com:reischapa/phrag.py.git ~/bin/phrag
+
+
 

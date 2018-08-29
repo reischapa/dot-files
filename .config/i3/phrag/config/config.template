@@ -4,7 +4,7 @@ set $term terminator
 
 floating_modifier $mod
 
-font pango:Liberation Mono Regular 14 
+font pango:Liberation Mono Regular 12
 
 set $monitor1 {{monitor1}} 
 set $monitor2 {{monitor2}}  
@@ -91,6 +91,7 @@ bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -2
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +2
 
 exec --no-startup-id nm-applet
+exec --no-startup-id bluman-applet
 exec --no-startup-id redshift
 
 exec --no-startup-id compton -b
@@ -104,4 +105,4 @@ exec_always --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=
 exec_always --no-startup-id c-polybar-bootstrap
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.jpg 
 
-{{i3_color_config}}  
+{{colors}}  

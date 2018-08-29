@@ -1,13 +1,4 @@
-[colors]
-background = #222
-background-alt = #ff003f
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
-progress-bar = #222AD9
-
+{{colors}}
 
 [bar/example]
 width = 100%

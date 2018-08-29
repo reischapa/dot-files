@@ -31,3 +31,9 @@
 [submodule "bin/Aether-repo"]
 	path = bin/Aether-repo
 	url = git@github.com:NoiSek/Aether.git
+[submodule "phrag"]
+	path = phrag
+	url = /home/chapa/bin/phrag
+[submodule "/home/chapa/bin/phrag-dir"]
+	path = /home/chapa/bin/phrag-dir
+	url = git@github.com:reischapa/phrag.py.git
