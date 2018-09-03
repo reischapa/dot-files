@@ -1,0 +1,23 @@
+#!/bin/bash
+
+i3_config_file="$HOME/.config/i3/config"
+i3_config_template_file="$HOME/.config/i3/config.template"
+i3_colors_config_file="$HOME/.config/i3/colors"
+
+monitor1_runtime_file="$HOME/bin/runtime/monitor1"
+monitor2_runtime_file="$HOME/bin/runtime/monitor2"
+
+if ! [ -z "$1" ] && [ "$1"="--scratch" ]; then
+  rm -r "$monitor1_runtime_file"
+  rm -r "$monitor2_runtime_file"
+fi
+
+if [ ! -f "$monitor1_runtime_file" ] || [ ! -f "$monitor2_runtime_file" ]; then
+  echo "Monitor runtime files are missing. Fill the information."
+  c-choose-screens
+fi
+
+python3 ~/bin/phrag-dir/phrag.py --workingDir /home/chapa/.config/i3
+python3 ~/bin/phrag-dir/phrag.py --workingDir /home/chapa/.config/polybar
+
+i3-msg restart
