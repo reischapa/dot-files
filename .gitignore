@@ -7,8 +7,6 @@
 !.vim/bundle/*
 !.ideavimrc
 !.setupEnvFiles
-!.config/i3
-!.config/polybar
 !bin/c-*
 !.setupEnvFiles
 !.zshrc
