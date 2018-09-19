@@ -5,6 +5,8 @@
 !.vim
 !.vim/bundle
 !.vim/bundle/*
+!.vim/autoload
+!.vim/autoload/*
 !.ideavimrc
 !.setupEnvFiles
 !bin/c-*
