@@ -96,3 +96,5 @@ source $ZSH/oh-my-zsh.sh
 zstyle ":completion:*:commands" rehash 1
 
 setopt no_share_history
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

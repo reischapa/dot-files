@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/vim-windowswap"]
 	path = .vim/bundle/vim-windowswap
 	url = git@github.com:wesQ3/vim-windowswap.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule ".vim/bundle/L9"]
 	path = .vim/bundle/L9
 	url = git@github.com:vim-scripts/L9.git
@@ -31,9 +28,9 @@
 [submodule "bin/Aether-repo"]
 	path = bin/Aether-repo
 	url = git@github.com:NoiSek/Aether.git
-[submodule "phrag"]
-	path = phrag
-	url = /home/chapa/bin/phrag
 [submodule "/home/chapa/bin/phrag-dir"]
 	path = /home/chapa/bin/phrag-dir
 	url = git@github.com:reischapa/phrag.py.git
+[submodule ".vim/bundle/fzf"]
+	path = .vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.git

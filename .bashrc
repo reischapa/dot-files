@@ -118,3 +118,5 @@ fi
 
 CHROME_BIN="chromium-browser"
 ANDROID_HOME=/home/chapa/Android/Sdk
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
