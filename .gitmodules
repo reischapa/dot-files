@@ -10,9 +10,6 @@
 [submodule ".vim/bundle/tern_for_vim"]
 	path = .vim/bundle/tern_for_vim
 	url = git@github.com:ternjs/tern_for_vim.git
-[submodule ".vim/bundle/vim-windowswap"]
-	path = .vim/bundle/vim-windowswap
-	url = git@github.com:wesQ3/vim-windowswap.git
 [submodule ".vim/bundle/L9"]
 	path = .vim/bundle/L9
 	url = git@github.com:vim-scripts/L9.git
@@ -22,15 +19,15 @@
 [submodule ".vim/bundle/vim-hug-neovim-rpc"]
 	path = .vim/bundle/vim-hug-neovim-rpc
 	url = git@github.com:roxma/vim-hug-neovim-rpc.git
-[submodule ".vim/bundle/vim-alda"]
-	path = .vim/bundle/vim-alda
-	url = https://github.com/daveyarwood/vim-alda.git
 [submodule "bin/Aether-repo"]
 	path = bin/Aether-repo
 	url = git@github.com:NoiSek/Aether.git
-[submodule "/home/chapa/bin/phrag-dir"]
-	path = /home/chapa/bin/phrag-dir
+[submodule "bin/phrag-dir"]
+	path = bin/phrag-dir
 	url = git@github.com:reischapa/phrag.py.git
 [submodule ".vim/bundle/fzf"]
 	path = .vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule ".vim/bundle/deoplete-ternjs"]
+	path = .vim/bundle/deoplete-ternjs
+	url = git@github.com:carlitux/deoplete-ternjs.git
