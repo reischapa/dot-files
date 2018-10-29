@@ -35,8 +35,6 @@ nnoremap <Down> gj
 nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
-inoremap <Down> <C-o> gj
-inoremap <Up> <C-o> gk
 
 inoremap <C-o> :q! <CR> 
 vnoremap <C-q> :q! <CR> 
