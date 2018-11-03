@@ -16,12 +16,6 @@ sudo apt install liblightdm-gobject-1-dev
 sudo apt install terminator
 sudo apt install xfce4-power-manager
 
-
-#zsh
-sudo apt install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh
-
 #remove libreoffice
 sudo apt-get remove --purge libreoffice*
 
@@ -37,7 +31,6 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 sudo npm install --global create-react-app http-server eslint prettier
-
 
 #setup dot-files repo
 
