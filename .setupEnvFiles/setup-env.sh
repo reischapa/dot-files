@@ -57,6 +57,13 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 # lightdm-mini-greeter
 # https://github.com/prikhi/lightdm-mini-greeter
+# install and then change user in lightdm-mini-greeter config
+
+SETUP_ENV_FILES_DIR=~/.setupEnvFiles
+sudo apt install lightdm-mini-greeter
+sudo cp $SETUP_ENV_FILES_DIR/70-lightdm-mini-greeter.conf /etc/lightdm/lightdm.conf.d/70-lightdm-mini-greeter.conf
+sudo cp $SETUP_ENV_FILES_DIR/lightdm-mini-greeter.conf /etc/lightdm/lightdm-mini-greeter.conf
+
 
 # install the lock-on-suspend service
 
