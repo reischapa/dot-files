@@ -19,9 +19,6 @@
 [submodule ".vim/bundle/vim-hug-neovim-rpc"]
 	path = .vim/bundle/vim-hug-neovim-rpc
 	url = git@github.com:roxma/vim-hug-neovim-rpc.git
-[submodule "bin/Aether-repo"]
-	path = bin/Aether-repo
-	url = git@github.com:NoiSek/Aether.git
 [submodule "bin/phrag-dir"]
 	path = bin/phrag-dir
 	url = git@github.com:reischapa/phrag.py.git
