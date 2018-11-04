@@ -68,5 +68,9 @@ mkdir -p ~/bin
 
 git clone git@github.com:reischapa/phrag.py.git ~/bin/phrag
 
+# metacity can be removed, since we use i3 as the display manager
+sudo apt remove metacity*
+
+
 
 
