@@ -9,20 +9,20 @@ font pango:Liberation Mono Regular 12
 set $monitor1 {{monitor1}} 
 set $monitor2 {{monitor2}}  
 
-set $ws1 "A"
-set $ws2 "S"
-set $ws3 "D"
-set $ws4 "F"
+set $ws1 "0: {{workspace0Name}}"
+set $ws2 "1: {{workspace1Name}}"
+set $ws3 "2: {{workspace2Name}}"
+set $ws4 "3: {{workspace3Name}}"
 
 workspace $ws1 output $monitor1
 workspace $ws2 output $monitor1
 workspace $ws3 output $monitor2
 workspace $ws4 output $monitor2
 
-bindsym $mod+a workspace $ws1
-bindsym $mod+s workspace $ws2
-bindsym $mod+d workspace $ws3
-bindsym $mod+f workspace $ws4
+bindsym $mod+a workspace number 0 {{workspace0Name}}
+bindsym $mod+s workspace number 1 {{workspace1Name}}
+bindsym $mod+d workspace number 2 {{workspace2Name}}
+bindsym $mod+f workspace number 3 {{workspace3Name}}
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
