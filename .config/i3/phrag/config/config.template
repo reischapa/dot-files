@@ -4,7 +4,12 @@ set $term terminator
 
 floating_modifier $mod
 
-font pango:Liberation Mono Regular 12
+new_window pixel 3 
+new_float pixel 3
+
+hide_edge_borders smart
+
+font pango:Liberation Mono Regular 8
 
 set $monitor1 {{monitor1}} 
 set $monitor2 {{monitor2}}  
