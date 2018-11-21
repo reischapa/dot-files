@@ -4,12 +4,8 @@ set $term terminator
 
 floating_modifier $mod
 
-new_window pixel 3 
-new_float pixel 3
-
-hide_edge_borders smart
-
-font pango:Liberation Mono Regular 8
+new_window pixel 2
+new_float pixel 2
 
 set $monitor1 {{monitor1}} 
 set $monitor2 {{monitor2}}  
@@ -39,15 +35,15 @@ bindsym $mod+Shift+j move down 30 px
 bindsym $mod+Shift+k move up 30 px 
 bindsym $mod+Shift+l move right 30 px
 
-bindsym $mod+n exec i3-msg move container to workspace $ws1 
-bindsym $mod+m exec i3-msg move container to workspace $ws2 
-bindsym $mod+comma exec i3-msg move container to workspace $ws3
-bindsym $mod+period exec i3-msg move container to workspace $ws4 
+bindsym $mod+n exec i3-msg move container to workspace "$ws1"
+bindsym $mod+m exec i3-msg move container to workspace "$ws2"
+bindsym $mod+comma exec i3-msg move container to workspace "$ws3"
+bindsym $mod+period exec i3-msg move container to workspace "$ws4"
 
-bindsym $mod+Shift+n exec i3-msg move container to workspace $ws1 && i3-msg workspace $ws1
-bindsym $mod+Shift+m exec i3-msg move container to workspace $ws2 && i3-msg workspace $ws2 
-bindsym $mod+Shift+comma exec i3-msg move container to workspace $ws3 && i3-msg workspace $ws3
-bindsym $mod+Shift+period exec i3-msg move container to workspace $ws4 && i3-msg workspace $ws4 
+bindsym $mod+Shift+n exec i3-msg move container to workspace $ws1 && i3-msg workspace number 0  
+bindsym $mod+Shift+m exec i3-msg move container to workspace $ws2 && i3-msg workspace number 1 
+bindsym $mod+Shift+comma exec i3-msg move container to workspace $ws3 && i3-msg workspace number 2 
+bindsym $mod+Shift+period exec i3-msg move container to workspace $ws4 && i3-msg workspace number 3 
 
 bindsym $mod+y resize shrink width 20 px or 5 ppt
 bindsym $mod+u resize grow height 20 px or 5 ppt
@@ -72,7 +68,7 @@ bindsym $mod+v focus parent
 bindsym $mod+c focus child 
 bindsym $mod+z exec c-start-keepass 
 
-bindsym $mod+Shift+p reload
+bindsym $mod+Shift+p exec c-genconfig 
 bindsym $mod+p restart
 
 bindsym $mod+Shift+e exec i3-msg exit
