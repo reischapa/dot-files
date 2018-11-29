@@ -119,4 +119,9 @@ fi
 export EDITOR=vim
 
 export CHROME_BIN="chromium-browser"
-export ANDROID_HOME="$PATH/Android/Sdk"
+export ANDROID_HOME=/home/chapa/Android/Sdk
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# added by Anaconda3 installer
+export PATH="/home/chapa/bin/anaconda-dir/bin:$PATH"
