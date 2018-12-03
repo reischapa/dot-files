@@ -73,8 +73,8 @@ bindsym $mod+p restart
 
 bindsym $mod+Shift+e exec i3-msg exit
 
-bindsym Mod1+Tab workspace back_and_forth
-bindsym Control+Mod1+l exec c-screensaver 
+bindsym $mod2+Tab workspace back_and_forth
+bindsym $mod+e exec c-screensaver 
 
 bindsym $mod+4 exec c-toggle-laptop-screen-on-off
 bindsym $mod+5 exec xbacklight - 4 -time 0
