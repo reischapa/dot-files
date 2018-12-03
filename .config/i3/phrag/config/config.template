@@ -30,9 +30,14 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-bindsym $mod+Shift+h move left 30 px 
-bindsym $mod+Shift+j move down 30 px
-bindsym $mod+Shift+k move up 30 px 
+bindsym $mod+y resize shrink width 20 px or 5 ppt
+bindsym $mod+u resize grow height 20 px or 5 ppt
+bindsym $mod+i resize shrink height 20 px or 5 ppt
+bindsym $mod+o resize grow width 20 px or 5 ppt
+
+bindsym $mod+Shift+y move left 30 px 
+bindsym $mod+Shift+u move down 30 px
+bindsym $mod+Shift+i move up 30 px 
 bindsym $mod+Shift+l move right 30 px
 
 bindsym $mod+n exec i3-msg move container to workspace number 0 
@@ -44,11 +49,6 @@ bindsym $mod+Shift+n exec i3-msg move container to workspace number 0 && i3-msg 
 bindsym $mod+Shift+m exec i3-msg move container to workspace number 1 && i3-msg workspace number 1 
 bindsym $mod+Shift+comma exec i3-msg move container to workspace number 2 && i3-msg workspace number 2 
 bindsym $mod+Shift+period exec i3-msg move container to workspace number 3 && i3-msg workspace number 3 
-
-bindsym $mod+y resize shrink width 20 px or 5 ppt
-bindsym $mod+u resize grow height 20 px or 5 ppt
-bindsym $mod+i resize shrink height 20 px or 5 ppt
-bindsym $mod+o resize grow width 20 px or 5 ppt
 
 bindsym $mod+t exec i3-msg split h && $term
 bindsym $mod+Shift+t exec i3-msg split v && $term 

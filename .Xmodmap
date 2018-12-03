@@ -1,0 +1,9 @@
+clear lock
+
+keycode 66 = Mode_switch
+
+keycode  43 = h H Left Left j H j 
+keycode  44 = j J Down Down j J j 
+keycode  45 = k K Up Up oe OE oe
+keycode  46 = l L Right Right oslash Oslash oslash
+
