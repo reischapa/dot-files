@@ -20,10 +20,10 @@ workspace $ws2 output $monitor1
 workspace $ws3 output $monitor2
 workspace $ws4 output $monitor2
 
-bindsym $mod+a workspace number 0 {{workspace0Name}}
-bindsym $mod+s workspace number 1 {{workspace1Name}}
-bindsym $mod+d workspace number 2 {{workspace2Name}}
-bindsym $mod+f workspace number 3 {{workspace3Name}}
+bindsym $mod+a workspace number 0
+bindsym $mod+s workspace number 1
+bindsym $mod+d workspace number 2
+bindsym $mod+f workspace number 3
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
