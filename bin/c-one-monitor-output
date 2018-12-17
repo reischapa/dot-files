@@ -1,0 +1,19 @@
+#!/bin/bash
+
+MONITORS=`xrandr | grep -E "HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}'`
+
+echo "$MONITORS"
+
+CHOSEN_MONITOR=`echo "$MONITORS" | rofi -dmenu -p "Choose monitor: "`
+
+echo "$CHOSEN_MONITOR"
+
+if [ -z "$CHOSEN_MONITOR" ]; then
+  echo "No monitor chosen. Exiting...";
+  exit 1;
+fi
+
+xrandr --output "$CHOSEN_MONITOR" --auto `echo "$MONITORS" | grep -v "$CHOSEN_MONITOR" | xargs printf "--output %s --off "` 
+
+
+

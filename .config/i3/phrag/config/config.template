@@ -82,6 +82,7 @@ bindsym $mod+6 exec xbacklight + 4 -time 0
 
 bindsym $mod+7 exec --no-startup-id c-screen-mirror && i3-msg restart 
 bindsym $mod+8 exec --no-startup-id c-screen-toggle && i3-msg restart
+bindsym $mod+9 exec --no-startup-id c-one-monitor-output && i3-msg restart
 
 bindsym $mod+0 exec pulsemixer --toggle-mute
 bindsym $mod+minus exec pulsemixer --change-volume -2 

@@ -6,7 +6,7 @@ monitor2=`cat $HOME/bin/runtime/monitor2`
 if [ -z "$monitor1" ] || [ -z "$monitor2" ] ; then
   echo "Monitors are not set. Run c-setup-monitors.";
 else
-  xrandr --output "$monitor1" --output "$monitor2" --same-as "$monitor1";
+  xrandr --output "$monitor1" --auto --output "$monitor2" --auto --same-as "$monitor1";
 fi;
 
 

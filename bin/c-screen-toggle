@@ -7,5 +7,6 @@ if  xrandr | grep -q "$monitor2 d"; then
     xrandr --output "$monitor2" --off
 else
     xrandr --output "$monitor2" --auto
+    xrandr --output "$monitor1" --auto
     xrandr --output "$monitor2" --above "$monitor1"
 fi
