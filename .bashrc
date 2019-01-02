@@ -113,3 +113,6 @@ export ANDROID_HOME=/home/chapa/Android/Sdk
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 . /usr/share/autojump/autojump.sh
+
+PATH=$HOME/bin/n-dir/bin:$PATH
+
