@@ -4,6 +4,8 @@ set $term terminator
 
 floating_modifier $mod
 
+for_window [class="^jetbrains-.+"] focus
+
 new_window pixel 4
 new_float pixel 4
 
