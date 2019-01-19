@@ -24,7 +24,7 @@ module-margin-right = 2
 font-0 = Liberation Mono:weight=regular:size=8;2
 
 modules-left = memory cpu
-modules-right = backlight volume battery-bar battery-time  date
+{{modulesRight}}
 
 tray-position = left 
 tray-padding = 4 
@@ -60,39 +60,7 @@ bar-used-empty-foreground = #444444
 
 format = <label> <bar-used>
 
-[module/battery-bar]
-type = internal/battery
-battery = BAT0
-adapter = AC0
-
-label-charging = Battery ▲ :
-label-discharging = Battery ▼ : 
-
-format-charging = <label-charging> <bar-capacity>
-format-discharging = <label-discharging> <bar-capacity>
-
-bar-capacity-indicator =
-bar-capacity-width = 10 
-bar-capacity-foreground-0 = ${colors.progress-bar} 
-bar-capacity-fill = ▐
-bar-capacity-empty = ▐
-bar-capacity-empty-foreground = #444444
-
-format = <label> <bar-capacity> 
-
-[module/battery-time]
-type = internal/battery
-battery = BAT0
-adapter = AC0
-
-time-format = %H:%M
-
-label-charging = %time%
-label-discharging = %time% 
-
-format-charging = <label-charging>
-format-discharging = <label-discharging>
-format-margin = 0
+{{batteryModules}}
 
 [module/date]
 type = internal/date
