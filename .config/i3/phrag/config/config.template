@@ -113,4 +113,6 @@ exec_always --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=
 exec_always --no-startup-id c-polybar-bootstrap
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.jpg 
 
+{{customBootCommands}}
+
 {{colors}}  
