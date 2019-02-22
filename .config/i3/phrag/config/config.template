@@ -71,7 +71,7 @@ bindsym $mod+c focus child
 bindsym $mod+z exec c-start-keepass 
 
 bindsym $mod+Shift+p exec c-genconfig 
-bindsym $mod+p restart
+bindsym $mod+p reload 
 
 bindsym $mod+Shift+e exec i3-msg exit
 

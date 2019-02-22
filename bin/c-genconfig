@@ -20,4 +20,4 @@ fi
 python3 ~/bin/phrag-dir/phrag.py --workingDir /home/chapa/.config/i3
 python3 ~/bin/phrag-dir/phrag.py --workingDir /home/chapa/.config/polybar
 
-i3-msg restart
+i3-msg reload 

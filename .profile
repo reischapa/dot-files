@@ -21,9 +21,9 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Ubuntu make installation of Ubuntu Make binary symlink
-PATH=$HOME/.local/share/umake/bin:$PATH
-
 if [ -z "$DISPLAY" -a $XDG_VTNR -eq 1 ]; then
   startx
 fi
+# Ubuntu make installation of Ubuntu Make binary symlink
+PATH=/home/chapa/.local/share/umake/bin:$PATH
+
