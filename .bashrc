@@ -54,6 +54,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+source ~/bin/.git-prompt.sh
+
 PROMPT_COMMAND=__prompt_command
 
 __prompt_command() {
@@ -112,16 +114,21 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR=vim
-
 export CHROME_BIN="chromium-browser"
-export ANDROID_HOME=/home/chapa/Android/Sdk
+export ANDROID_HOME=$HOME/Android/Sdk
+export N_PREFIX="$HOME/bin/n-dir"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+PATH=$HOME/bin/n-dir/bin:$HOME/bin:$PATH
+PATH=$HOME/.local/share/umake/bin:$PATH
 
-. /usr/share/autojump/autojump.sh
+if [ -f ~/.fzf.bash ]; then
+  source ~/.fzf.bash
+fi
 
-PATH=$HOME/bin/n-dir/bin:$PATH
+if [ -f /usr/share/autojump/autojump.sh ]; then
+  source /usr/share/autojump/autojump.sh 
+fi
 
 if [ -f /home/chapa/.tnsrc ]; then 
-    source /home/chapa/.tnsrc 
+  source /home/chapa/.tnsrc 
 fi

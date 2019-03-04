@@ -1,0 +1,1 @@
+xinput set-prop "$touchpad" "libinput Natural Scrolling Enabled" `cat "$enable_natural_scrolling_runtime_file"`

@@ -1,0 +1,1 @@
+xinput set-prop "$touchpad" "libinput Tapping Enabled" `cat "$enable_tapping_runtime_file"`

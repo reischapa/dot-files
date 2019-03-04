@@ -17,7 +17,8 @@ if [ ! -f "$monitor1_runtime_file" ] || [ ! -f "$monitor2_runtime_file" ]; then
   c-choose-screens
 fi
 
-python3 ~/bin/phrag-dir/phrag.py --workingDir /home/chapa/.config/i3
-python3 ~/bin/phrag-dir/phrag.py --workingDir /home/chapa/.config/polybar
+python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/.config/i3
+python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/.config/polybar
+python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/bin
 
 i3-msg reload 

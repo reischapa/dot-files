@@ -17,5 +17,5 @@ if [ -z "$chosen_database" ]; then
   exit 1
 fi
 
-keepass2 "$chosen_database"
+keepass "$chosen_database"
 

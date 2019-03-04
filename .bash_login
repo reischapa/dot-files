@@ -16,14 +16,4 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [ -z "$DISPLAY" -a $XDG_VTNR -eq 1 ]; then
-  startx
-fi
-# Ubuntu make installation of Ubuntu Make binary symlink
-PATH=/home/chapa/.local/share/umake/bin:$PATH
 

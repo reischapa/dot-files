@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-export N_PREFIX="$HOME/bin/n-dir";
-/usr/bin/n "$@";

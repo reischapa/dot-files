@@ -14,6 +14,7 @@ set termencoding=utf-8
 set guifont=Monospace\ 14
 set background=dark
 set belloff=all
+set clipboard=unnamedplus
 
 syntax on
 
@@ -62,5 +63,7 @@ execute pathogen#infect()
 let g:deoplete#enable_at_startup = 1
 
 let g:ale_fixers = { 'javascript': ['eslint']}
+
+
 
 

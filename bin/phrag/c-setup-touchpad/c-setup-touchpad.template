@@ -1,0 +1,64 @@
+#! /bin/bash
+
+touchpad_runtime_file="$HOME/bin/runtime/touchpad"
+enable_tapping_runtime_file="$HOME/bin/runtime/enableTapping"
+enable_natural_scrolling_runtime_file="$HOME/bin/runtime/enableNaturalScrolling"
+enable_circular_scrolling_runtime_file="$HOME/bin/runtime/enableCircularScrolling"
+enable_edge_scrolling_runtime_file="$HOME/bin/runtime/enableEdgeScrolling"
+
+if ! [ -z "$1" ] && [ "$1" = "--reset" ]; then
+  `rm -rf "$enable_tapping_runtime_file"`
+  `rm -rf "$enable_natural_scrolling_runtime_file"`
+  `rm -rf "$enable_circular_scrolling_runtime_file"`
+  `rm -rf "$enable_edge_scrolling_runtime_file"`
+fi
+
+touchpad=`cat "$touchpad_runtime_file"`
+enableTapping=`cat "$enable_tapping_runtime_file"`
+enableNaturalScrolling=`cat "$enable_natural_scrolling_runtime_file"`
+enableCircularScrolling=`cat "$enable_circular_scrolling_runtime_file"`
+enableEdgeScrolling=`cat "$enable_edge_scrolling_runtime_file"`
+
+if [ -z "$enableTapping" ]; then
+  echo -e "0\n1" | rofi -dmenu -p "Enable Tapping? " > "$enable_tapping_runtime_file"
+fi
+
+if [ -z "$enableNaturalScrolling" ]; then
+  echo -e "0\n1" | rofi -dmenu -p "Enable Natural Scrolling? " > "$enable_natural_scrolling_runtime_file" 
+fi
+
+if [ -z "$enableCircularScrolling" ]; then
+  echo -e "0\n1" | rofi -dmenu -p "Enable Circular Scrolling " > "$enable_circular_scrolling_runtime_file"
+fi
+
+if [ -z "$enableEdgeScrolling" ]; then
+  echo -e "0\n1" | rofi -dmenu -p "Enable Edge Scrolling " > "$enable_edge_scrolling_runtime_file"
+fi
+
+if [ `cat $enable_tapping_runtime_file` -eq 1 ]; then
+  echo "Enabling tapping..."
+  {{enable-tap-command}}
+fi
+
+if [ `cat $enable_natural_scrolling_runtime_file` -eq 1 ]; then
+  echo "Enabling natural scrolling..."
+  {{enable-natural-scrolling-command}}
+fi
+
+if [ `cat $enable_circular_scrolling_runtime_file` -eq 1 ]; then
+  echo "Enabling circular scrolling..."
+  {{enable-circular-scrolling-command}}
+else
+  echo "Disabling circular scrolling..."
+  {{disable-circular-scrolling-command}}
+fi
+
+if [ `cat $enable_edge_scrolling_runtime_file` -eq 1 ]; then
+  echo "Enabling edge scrolling..."
+  {{enable-edge-scrolling-command}}
+else
+  echo "Disabling edge scrolling..."
+  {{disable-edge-scrolling-command}}
+fi
+
+{{extra-commands}}
