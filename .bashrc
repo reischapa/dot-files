@@ -120,6 +120,7 @@ export N_PREFIX="$HOME/bin/n-dir"
 
 PATH=$HOME/bin/n-dir/bin:$HOME/bin:$PATH
 PATH=$HOME/.local/share/umake/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 if [ -f ~/.fzf.bash ]; then
   source ~/.fzf.bash
