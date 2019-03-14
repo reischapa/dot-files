@@ -117,6 +117,7 @@ export EDITOR=vim
 export CHROME_BIN="chromium-browser"
 export ANDROID_HOME=$HOME/Android/Sdk
 export N_PREFIX="$HOME/bin/n-dir"
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 PATH=$HOME/bin/n-dir/bin:$HOME/bin:$PATH
 PATH=$HOME/.local/share/umake/bin:$PATH
