@@ -101,12 +101,12 @@ exec --no-startup-id redshift
 
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id xfce4-power-manager 
-exec --no-startup-id "xmodmap $HOME/.config/xmodmap/config"
 exec --no-startup-id i3-msg workspace number 0 
 
-exec_always --no-startup-id c-polybar-bootstrap
 exec_always --no-startup-id c-setup-touchpad
 exec_always --no-startup-id c-setup-keyboard-layout
+
+exec_always --no-startup-id c-polybar-bootstrap
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.jpg 
 
 

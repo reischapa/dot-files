@@ -39,3 +39,5 @@ if [ "$?" != 0 ]; then
   echo 'Error setting keyboard layout/variant';
 fi
 
+c-remap-keyboard-keys
+
