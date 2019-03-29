@@ -1,0 +1,88 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "plugins": [
+    "import",
+    "prettier",
+    "chai-friendly"
+  ],
+  "env": {
+    "mocha":true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "trailingComma": "none",
+      "bracketSpacing": false,
+      "tabWidth": 2
+    }],
+    "no-plusplus": ["off"],
+    "class-methods-use-this": ["off"],
+    "no-underscore-dangle": ["off"],
+    "no-eval": ["off"],
+    "import/no-dynamic-require": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "global-require": ["off"],
+    "no-unused-expressions": ["off"],
+    "chai-friendly/no-unused-expressions": ["error"],
+    "no-param-reassign": ["error", {"props": false}],
+    "react/jsx-filename-extension": ["off"],
+    "react/forbid-prop-types": ["error", { forbid: ["any"] }],
+    "no-restricted-properties": [
+      "error", 
+      {
+        object: "arguments",
+        property: "callee",
+        message: "arguments.callee is deprecated",
+      }, 
+      {
+        object: "global",
+        property: "isFinite",
+        message: "Please use Number.isFinite instead",
+      }, 
+      {
+        object: "self",
+        property: "isFinite",
+        message: "Please use Number.isFinite instead",
+      }, 
+      {
+        object: "window",
+        property: "isFinite",
+        message: "Please use Number.isFinite instead",
+      }, 
+      {
+        object: "global",
+        property: "isNaN",
+        message: "Please use Number.isNaN instead",
+      }, 
+      {
+        object: "self",
+        property: "isNaN",
+        message: "Please use Number.isNaN instead",
+      }, 
+      {
+        object: "window",
+        property: "isNaN",
+        message: "Please use Number.isNaN instead",
+      }, 
+      {
+        property: "__defineGetter__",
+        message: "Please use Object.defineProperty instead.",
+      }, 
+      {
+        property: "__defineSetter__",
+        message: "Please use Object.defineProperty instead.",
+      }
+    ],
+  }
+}
