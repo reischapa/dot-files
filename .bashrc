@@ -118,9 +118,9 @@ export CHROME_BIN="chromium-browser"
 export ANDROID_HOME=$HOME/Android/Sdk
 export N_PREFIX="$HOME/bin/n-dir"
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+export FILE_LOG_LEVEL=critical
 
 PATH=$HOME/bin/n-dir/bin:$HOME/bin:$PATH
-PATH=$HOME/.local/share/umake/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
 
 if [ -f ~/.fzf.bash ]; then

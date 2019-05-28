@@ -1,88 +1,150 @@
 {
   "extends": [
     "airbnb",
-    "prettier"
+    "prettier",
+    "prettier/react",
+    "plugin:security/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": false,
-    "codeFrame": false
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "classes": true,
+      "legacyDecorators": true
+    }
   },
-  "plugins": [
-    "import",
-    "prettier",
-    "chai-friendly"
-  ],
   "env": {
-    "mocha":true,
-    "es6": true,
-    "node": true
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "jest": true
   },
   "rules": {
-    "prettier/prettier": ["error", {
-      "singleQuote": true,
-      "trailingComma": "none",
-      "bracketSpacing": false,
-      "tabWidth": 2
-    }],
-    "no-plusplus": ["off"],
-    "class-methods-use-this": ["off"],
-    "no-underscore-dangle": ["off"],
-    "no-eval": ["off"],
-    "import/no-dynamic-require": ["off"],
-    "import/no-extraneous-dependencies": ["off"],
-    "global-require": ["off"],
-    "no-unused-expressions": ["off"],
-    "chai-friendly/no-unused-expressions": ["error"],
-    "no-param-reassign": ["error", {"props": false}],
-    "react/jsx-filename-extension": ["off"],
-    "react/forbid-prop-types": ["error", { forbid: ["any"] }],
-    "no-restricted-properties": [
-      "error", 
+    "no-eval": 1,
+    "no-debugger": 2,
+    "no-alert": 1,
+    "no-console": 1,
+    "no-await-in-loop": 0,
+    "no-plusplus": 0,
+    "class-methods-use-this": 0,
+    "no-return-assign": [
+      "error",
+      "except-parens"
+    ],
+    "no-restricted-syntax": [
+      2,
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-unused-vars": [
+      1,
       {
-        object: "arguments",
-        property: "callee",
-        message: "arguments.callee is deprecated",
-      }, 
-      {
-        object: "global",
-        property: "isFinite",
-        message: "Please use Number.isFinite instead",
-      }, 
-      {
-        object: "self",
-        property: "isFinite",
-        message: "Please use Number.isFinite instead",
-      }, 
-      {
-        object: "window",
-        property: "isFinite",
-        message: "Please use Number.isFinite instead",
-      }, 
-      {
-        object: "global",
-        property: "isNaN",
-        message: "Please use Number.isNaN instead",
-      }, 
-      {
-        object: "self",
-        property: "isNaN",
-        message: "Please use Number.isNaN instead",
-      }, 
-      {
-        object: "window",
-        property: "isNaN",
-        message: "Please use Number.isNaN instead",
-      }, 
-      {
-        property: "__defineGetter__",
-        message: "Please use Object.defineProperty instead.",
-      }, 
-      {
-        property: "__defineSetter__",
-        message: "Please use Object.defineProperty instead.",
+        "ignoreSiblings": true,
+        "argsIgnorePattern": "res|next|^err"
       }
     ],
-  }
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all",
+      }
+    ],
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+    "func-names": 0,
+    "space-before-function-paren": 0,
+    "comma-dangle": 0,
+    "import/named": 0,
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": ["**/test/**/*"]
+      }
+    ],
+    "no-underscore-dangle": 0,
+    "react/display-name": 1,
+    "react/destructuring-assignment": 0,
+    "react/no-array-index-key": 0,
+    "react/forbid-prop-types": 0,
+    "react/no-unescaped-entities": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "radix": 0,
+    "no-shadow": [
+      2,
+      {
+        "hoist": "all",
+        "allow": [
+          "resolve",
+          "reject",
+          "done",
+          "next",
+          "err",
+          "error"
+        ]
+      }
+    ],
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "avoid",
+        "bracketSpacing": false,
+        "jsxBracketSameLine": false,
+        "printWidth": 80,
+        "semicolons": true,
+        "singleQuote": true,
+        "tabs": false,
+        "tabWidth": 2,
+        "trailingComma": "none"
+      }
+    ],
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "warn",
+      {
+        "aspects": [
+          "invalidHref"
+        ]
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "security/detect-child-process": "off"
+  },
+  "plugins": [
+    "html",
+    "prettier",
+    "react-hooks",
+    "security"
+  ]
 }
