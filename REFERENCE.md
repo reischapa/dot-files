@@ -12,7 +12,8 @@ sudo systemctl <serviceName> start
 
 # Notes
 
-autojump on arch needs a symlink from the .bash to .sh
+~~autojump on arch needs a symlink from the .bash to .sh~~ nope, solved on
+.bashrc
 
 needed programs
 
@@ -25,9 +26,9 @@ npm:
   lerna
 
 others:
-  lxterminal ?
-  realtek driver  
-  yay and/or yaourt
+  lxterminal
+  realtek driver
+  yay
   ssh
   keepass
   jq
@@ -36,10 +37,11 @@ others:
   compton
   .git-bash
   autojump
-  terminator
   rofi
   polybar
-  vim
+  ~~vim~~ nope, gvim due to clipboard integration
   python
   node
   nodemon
+  mobile-broadband-provider, modemmanager (3g, if not installed by installer)
+  thunar/nautilus (makes usb drives so much easier)
