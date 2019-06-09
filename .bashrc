@@ -129,7 +129,10 @@ fi
 
 if [ -f /usr/share/autojump/autojump.sh ]; then
   source /usr/share/autojump/autojump.sh 
+elif [ -f /usr/share/autojump/autojump.bash ]; then
+  source /usr/share/autojump/autojump.bash 
 fi
+
 
 if [ -f /home/chapa/.tnsrc ]; then 
   source /home/chapa/.tnsrc 
