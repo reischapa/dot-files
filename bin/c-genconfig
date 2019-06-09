@@ -20,6 +20,7 @@ fi
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/.config/i3
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/.config/polybar
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/bin
+python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME
 
 chmod a+x ~/bin/c-setup-touchpad
 
