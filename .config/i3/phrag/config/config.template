@@ -97,6 +97,7 @@ bindsym $mod+Tab exec c-carousel-workspaces up
 bindsym $mod+Shift+Tab exec c-carousel-workspaces down
 
 exec --no-startup-id redshift
+exec --no-startup-id compton
 
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id xfce4-power-manager 
