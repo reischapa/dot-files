@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nmcli --terse --fields DEVICE,NAME con show --active | sed -e 'N;s|\n|  |g' | sed -e 's/:/|/g'
