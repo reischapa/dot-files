@@ -114,6 +114,7 @@ if ! shopt -oq posix; then
 fi
 
 PATH=$HOME/bin/n-dir/bin:$HOME/bin:$PATH
+PATH=$HOME/.npm_modules/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
 
 if [ -f ~/.env_variables ]; then
