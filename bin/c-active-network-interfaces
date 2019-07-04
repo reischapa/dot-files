@@ -1,3 +1,12 @@
 #!/bin/bash
 
-nmcli --terse --fields DEVICE,NAME con show --active | sed -e 'N;s|\n|  |g' | sed -e 's/:/|/g'
+OUT=`nmcli --terse --fields DEVICE,NAME con show --active | sed -e 'N;s|\n|  |g' | sed -e 's/:/|/g'`
+
+if [ -z "$OUT" ]; then
+  echo "N/A";
+  exit 1;
+fi
+
+echo "$OUT" 
+
+
