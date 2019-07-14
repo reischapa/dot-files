@@ -1,0 +1,1 @@
+export HOST_PS1='\[\e[1;91m\h\[\e[00m';
