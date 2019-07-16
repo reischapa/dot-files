@@ -37,7 +37,7 @@ __prompt_command() {
   CURRENT_DATE=$(date '+%T');
  
 
-  PS1="\[\e[1;94m\$CURRENT_DATE \u@$HOST_PS1\[\e[1;94m`__git_ps1`\[\e[00m \$(pwd)\n\e[1;0m\$EXIT_CODE\[\e[0m \$ "
+  PS1="\[\e[1;94m\]\$CURRENT_DATE \u@$HOST_PS1\[\e[1;94m\]`__git_ps1`\[\e[00m\] \$(pwd)\n\e[1;0m\]\$EXIT_CODE\[\e[0m\] \$ "
 }
 
 
