@@ -1,10 +1,15 @@
 #!/bin/bash
 
-OUT=`nmcli --terse --fields DEVICE,NAME con show --active | sed -e 'N;s|\n|  |g' | sed -e 's/:/|/g'`
+OUT=`nmcli --terse --fields DEVICE,NAME,STATE con show --active | grep -i 'activated' | sed -e 's/:activated//g' | sed -e 'N;s|\n|  |g' | sed -e 's/:/|/g'`
+
+if [ $? != 0 ]; then
+  echo "Script error"
+  exit $?;
+fi
 
 if [ -z "$OUT" ]; then
   echo "N/A";
-  exit 1;
+  exit 0;
 fi
 
 echo "$OUT" 
