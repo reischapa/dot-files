@@ -2,6 +2,7 @@
 
 [Unit]
 Description=Lock the screen on resume from suspend
+Before=sleep.target
 
 [Service]
 User=chapa
@@ -11,4 +12,3 @@ ExecStart=/home/chapa/bin/c-screensaver
 
 [Install]
 WantedBy=sleep.target
-WantedBy=suspend.target
