@@ -90,3 +90,8 @@ fi
 if [ -f /home/chapa/.tnsrc ]; then 
   source /home/chapa/.tnsrc 
 fi
+
+if [ ! -d  "$HOME/.vim/tmp" ]; then
+  mkdir -vp $HOME/.vim/tmp
+fi
+

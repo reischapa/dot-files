@@ -1,3 +1,4 @@
+
 set rnu
 set nu
 
@@ -15,6 +16,11 @@ set guifont=Monospace\ 14
 set background=dark
 set belloff=all
 set clipboard=unnamedplus
+
+set backup
+set nowritebackup
+
+set backupdir=~/.vim/tmp,.,
 
 syntax on
 
@@ -63,7 +69,5 @@ execute pathogen#infect()
 let g:deoplete#enable_at_startup = 1
 
 let g:ale_fixers = { 'javascript': ['eslint']}
-
-
 
 
