@@ -24,7 +24,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-source ~/bin/.git-prompt.sh
+source /usr/share/git/completion/git-prompt.sh
 
 if [ -f ~/.env_variables ]; then
   source ~/.env_variables
