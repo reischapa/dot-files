@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo 'No filename provided! Exiting...';
+fi
+
+touch "$1";
+chmod a+x "$1";
+
+echo '#!/usr/bin/env bash' > "$1";
