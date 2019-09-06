@@ -17,6 +17,9 @@ if [ ! -f "$monitor1_runtime_file" ] || [ ! -f "$monitor2_runtime_file" ]; then
   c-choose-screens
 fi
 
+ln -sv $monitor1_runtime_file $HOME/.config/i3/phrag/config/monitor1
+ln -sv $monitor2_runtime_file $HOME/.config/i3/phrag/config/monitor2
+
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/.config/i3
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/.config/polybar
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/bin
