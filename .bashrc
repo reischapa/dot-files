@@ -78,6 +78,9 @@ PATH=$HOME/.local/bin:$PATH
 
 if [ -f ~/.fzf.bash ]; then
   source ~/.fzf.bash
+elif [ -f /usr/share/fzf/key-bindings.bash ]; then
+  source /usr/share/fzf/key-bindings.bash
+  source /usr/share/fzf/completion.bash
 fi
 
 if [ -f /usr/share/autojump/autojump.sh ]; then
