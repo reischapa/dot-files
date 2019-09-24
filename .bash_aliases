@@ -26,3 +26,7 @@ function mgp() {
   git push;
 }
 
+function mgu() {
+  git pull;
+}
+
