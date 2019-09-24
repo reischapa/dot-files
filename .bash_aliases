@@ -33,3 +33,7 @@ function mgh() {
 function mghi() {
   git checkout -b "$1" 
 }
+
+function mgl() {
+  git log;
+}
