@@ -2,10 +2,6 @@
 #alias v=vim
 #alias clc=clear
 
-#alias mgs='git status'
-#alias mgd='git diff --cached'
-#alias mgaa='git add .'
-
 function mgs() {
   git status;
 }
@@ -30,3 +26,10 @@ function mgu() {
   git pull;
 }
 
+function mgh() {
+  git checkout "$1" 
+}
+
+function mghi() {
+  git checkout -b "$1" 
+}
