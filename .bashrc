@@ -98,3 +98,15 @@ if [ ! -d  "$HOME/.vim/tmp" ]; then
   mkdir -vp $HOME/.vim/tmp
 fi
 
+if [ ! -d  "$HOME/bin/runtime" ]; then
+  mkdir -vp $HOME/bin/runtime
+fi
+
+if [ ! -f "$HOME/bin/runtime/monitor1" ]; then
+  touch "$HOME/bin/runtime/monitor1"
+fi
+
+if [ ! -f "$HOME/bin/runtime/monitor2" ]; then
+  touch "$HOME/bin/runtime/monitor2"
+fi
+
