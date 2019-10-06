@@ -1,30 +1,30 @@
 [submodule ".vim/bundle/ale"]
 	path = .vim/bundle/ale
-	url = git@github.com:w0rp/ale.git
+	url = https://github.com/w0rp/ale.git
 [submodule ".vim/bundle/deoplete.nvim"]
 	path = .vim/bundle/deoplete.nvim
-	url = git@github.com:Shougo/deoplete.nvim.git
+	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/tern_for_vim"]
 	path = .vim/bundle/tern_for_vim
-	url = git@github.com:ternjs/tern_for_vim.git
+	url = https://github.com/ternjs/tern_for_vim.git
 [submodule ".vim/bundle/L9"]
 	path = .vim/bundle/L9
-	url = git@github.com:vim-scripts/L9.git
+	url = https://github.com/vim-scripts/L9.git
 [submodule ".vim/bundle/nvim-yarp"]
 	path = .vim/bundle/nvim-yarp
-	url = git@github.com:roxma/nvim-yarp.git
+	url = https://github.com/roxma/nvim-yarp.git
 [submodule ".vim/bundle/vim-hug-neovim-rpc"]
 	path = .vim/bundle/vim-hug-neovim-rpc
-	url = git@github.com:roxma/vim-hug-neovim-rpc.git
+	url = https://github.com/roxma/vim-hug-neovim-rpc.git
 [submodule "bin/phrag-dir"]
 	path = bin/phrag-dir
-	url = git@github.com:reischapa/phrag.py.git
+	url = https://github.com/reischapa/phrag.py.git
 [submodule ".vim/bundle/fzf"]
 	path = .vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule ".vim/bundle/deoplete-ternjs"]
 	path = .vim/bundle/deoplete-ternjs
-	url = git@github.com:carlitux/deoplete-ternjs.git
+	url = https://github.com/carlitux/deoplete-ternjs.git
