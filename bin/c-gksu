@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+COMMAND='sudo '"$@"''
+
+$TERMINAL -e "$COMMAND"
