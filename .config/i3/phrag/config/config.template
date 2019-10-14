@@ -20,10 +20,10 @@ workspace $ws2 output $monitor1
 workspace $ws3 output $monitor2
 workspace $ws4 output $monitor2
 
-bindsym $mod+a workspace number 0
-bindsym $mod+s workspace number 1
-bindsym $mod+d workspace number 2
-bindsym $mod+f workspace number 3
+bindsym $mod+a workspace $ws1
+bindsym $mod+s workspace $ws2
+bindsym $mod+d workspace $ws3
+bindsym $mod+f workspace $ws4
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -40,15 +40,15 @@ bindsym $mod+Shift+u move down 30 px
 bindsym $mod+Shift+i move up 30 px 
 bindsym $mod+Shift+o move right 30 px
 
-bindsym $mod+n exec i3-msg move container to workspace number 0 
-bindsym $mod+m exec i3-msg move container to workspace number 1 
-bindsym $mod+comma exec i3-msg move container to workspace number 2 
-bindsym $mod+period exec i3-msg move container to workspace number 3 
+bindsym $mod+n exec i3-msg move container to workspace $ws1
+bindsym $mod+m exec i3-msg move container to workspace $ws2
+bindsym $mod+comma exec i3-msg move container to workspace $ws3
+bindsym $mod+period exec i3-msg move container to workspace $ws4
 
-bindsym $mod+Shift+n exec i3-msg move container to workspace number 0 && i3-msg workspace number 0  
-bindsym $mod+Shift+m exec i3-msg move container to workspace number 1 && i3-msg workspace number 1 
-bindsym $mod+Shift+comma exec i3-msg move container to workspace number 2 && i3-msg workspace number 2 
-bindsym $mod+Shift+period exec i3-msg move container to workspace number 3 && i3-msg workspace number 3 
+bindsym $mod+Shift+n exec i3-msg move container to workspace $ws1 && i3-msg workspace $ws1
+bindsym $mod+Shift+m exec i3-msg move container to workspace $ws2 && i3-msg workspace $ws2
+bindsym $mod+Shift+comma exec i3-msg move container to workspace $ws3 && i3-msg workspace $ws3
+bindsym $mod+Shift+period exec i3-msg move container to workspace $ws4 && i3-msg workspace $ws4
 
 bindsym $mod+t exec i3-msg split h && $term
 bindsym $mod+Shift+t exec i3-msg split v && $term 
