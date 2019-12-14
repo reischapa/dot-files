@@ -71,8 +71,8 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+z exec c-start-keepass 
 bindsym $mod+x exec "c-set-keyboard-layout --reset" 
 
-bindsym $mod+n focus child
-bindsym $mod+m focus parent
+bindsym $mod+c focus child
+bindsym $mod+v focus parent
 
 bindsym $mod+Shift+p exec c-genconfig 
 bindsym $mod+p reload 
