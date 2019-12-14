@@ -50,6 +50,9 @@ bindsym $mod+Shift+m exec i3-msg move container to workspace $ws2 && i3-msg work
 bindsym $mod+Shift+comma exec i3-msg move container to workspace $ws3 && i3-msg workspace $ws3
 bindsym $mod+Shift+period exec i3-msg move container to workspace $ws4 && i3-msg workspace $ws4
 
+bindsym $mod+g scratchpad show
+bindsym $mod+Shift+g move scratchpad
+
 bindsym $mod+t exec i3-msg split h && $term
 bindsym $mod+Shift+t exec i3-msg split v && $term 
 
@@ -59,20 +62,20 @@ bindsym $mod+colon exec rofi -show run
 bindsym $mod+Shift+colon exec i3-msg split v && rofi -show run
 
 bindsym $mod+slash exec "rofi -show window" 
-bindsym $mod+g fullscreen toggle
+
+bindsym $mod+r fullscreen toggle
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-bindsym $mod+v focus parent
-bindsym $mod+c focus child 
 bindsym $mod+z exec c-start-keepass 
 bindsym $mod+x exec "c-set-keyboard-layout --reset" 
 
+bindsym $mod+n focus child
+bindsym $mod+m focus parent
+
 bindsym $mod+Shift+p exec c-genconfig 
 bindsym $mod+p reload 
-
-bindsym $mod+Shift+e exec i3-msg exit
 
 bindsym $mod2+Tab workspace back_and_forth
 bindsym $mod+e exec c-screensaver 
@@ -100,7 +103,6 @@ exec --no-startup-id redshift
 exec --no-startup-id compton
 
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id xfce4-power-manager 
 exec --no-startup-id i3-msg workspace number 0 
 
 exec_always --no-startup-id c-setup-touchpad
@@ -108,7 +110,6 @@ exec_always --no-startup-id c-set-keyboard-layout
 
 exec_always --no-startup-id c-polybar-bootstrap
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.jpg 
-
 
 {{customBootCommands}}
 
