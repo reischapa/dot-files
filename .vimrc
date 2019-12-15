@@ -54,7 +54,6 @@ command Q qa
 
 silent !stty -ixon
 
-au BufRead,BufNewFile *.md setlocal textwidth=80
 au VimEnter * ALEDisable
 au VimLeave * silent !stty ixon
 
