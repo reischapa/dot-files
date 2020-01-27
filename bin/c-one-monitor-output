@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MONITORS=`xrandr | grep -E "HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}'`
+MONITORS=`xrandr | grep -E "DisplayPort|HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}'`
 
 echo "$MONITORS"
 
