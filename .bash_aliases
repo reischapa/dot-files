@@ -37,3 +37,7 @@ function mghi() {
 function mgl() {
   git log;
 }
+
+function mgbl() {
+  git branch --list;
+}
