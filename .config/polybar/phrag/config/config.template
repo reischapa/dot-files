@@ -23,7 +23,7 @@ module-margin-right = 2
 
 font-0 = Liberation Mono:weight=regular:size=8;2
 
-modules-left = memory cpu active-network-interfaces
+modules-left = memory cpu currently-focused-workspace active-network-interfaces 
 {{modulesRight}}
 
 tray-position = left 
@@ -63,6 +63,14 @@ exec = c-active-network-interfaces
 interval = 2
 
 label = Network: %output%
+
+[module/currently-focused-workspace]
+type = custom/script
+exec = c-show-focused-workspace-name 
+tail = true
+
+label = %output%
+label-foreground = ${colors.foreground}
 
 {{batteryModules}}
 

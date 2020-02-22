@@ -96,9 +96,6 @@ bindsym XF86AudioMute exec pulsemixer --toggle-mute
 bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -2
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +2
 
-bindsym $mod+Tab exec c-carousel-workspaces up
-bindsym $mod+Shift+Tab exec c-carousel-workspaces down
-
 exec --no-startup-id redshift
 
 exec --no-startup-id xscreensaver -no-splash

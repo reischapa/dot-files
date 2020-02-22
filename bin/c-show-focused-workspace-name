@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+while (true); do
+  WORKSPACE_NAME=$(c-get-focused-workspace name);
+
+  echo "$WORKSPACE_NAME";
+
+  sleep 1;
+done;
+

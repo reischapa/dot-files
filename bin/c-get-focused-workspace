@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-i3-msg -t get_workspaces | jq -r '.[] | select(.focused).num'
+FIELD_NAME="$1"
+
+if [ -z "$FIELD_NAME" ]; then
+  FIELD_NAME="num"
+fi
+
+i3-msg -t get_workspaces | jq -r '.[] | select(.focused).'"$FIELD_NAME"
