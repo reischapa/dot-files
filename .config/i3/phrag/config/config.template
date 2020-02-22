@@ -4,8 +4,8 @@ set $term lxterminal
 
 floating_modifier $mod
 
-new_window pixel 4
-new_float pixel 4
+new_window pixel 8
+new_float pixel 2
 
 set $monitor1 {{monitor1}} 
 set $monitor2 {{monitor2}}  
