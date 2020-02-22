@@ -1,11 +1,7 @@
 #!/bin/bash
 
-function getCurrentWorkspace() {
-  echo `i3-msg -t get_workspaces | jq -r '.[] | select(.focused).num'`
-}
-
 MAX_WORKSPACE_NUMBER=3
-FOCUSED_WORKSPACE=$(getCurrentWorkspace)
+FOCUSED_WORKSPACE=$(c-get-focused-workspace)
 
 if [ "$1" == "up" ]
 then
