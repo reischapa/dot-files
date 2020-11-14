@@ -84,9 +84,9 @@ bindsym $mod+4 exec c-toggle-laptop-screen-on-off
 bindsym $mod+5 exec xbacklight - 4 -time 0
 bindsym $mod+6 exec xbacklight + 4 -time 0
 
-bindsym $mod+7 exec --no-startup-id c-screen-mirror && i3-msg restart 
-bindsym $mod+8 exec --no-startup-id c-screen-toggle && i3-msg restart
-bindsym $mod+9 exec --no-startup-id c-one-monitor-output && i3-msg restart
+bindsym $mod+7 exec --no-startup-id c-screen-mirror
+bindsym $mod+8 exec --no-startup-id c-screen-toggle
+bindsym $mod+9 exec --no-startup-id c-one-monitor-output
 
 bindsym $mod+0 exec pulsemixer --toggle-mute
 bindsym $mod+minus exec pulsemixer --change-volume -2 
@@ -105,6 +105,7 @@ exec_always --no-startup-id c-setup-touchpad
 exec_always --no-startup-id c-set-keyboard-layout
 
 exec_always --no-startup-id c-polybar-bootstrap
+exec_always --no-startup-id c-screen-toggle
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.jpg 
 
 {{customBootCommands}}
