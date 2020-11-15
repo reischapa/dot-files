@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e;
 
 KEYBOARD_LAYOUT_RUNTIME_FILE="$HOME/bin/runtime/keyboardLayout";
 KEYBOARD_VARIANT_RUNTIME_FILE="$HOME/bin/runtime/keyboardVariant";
