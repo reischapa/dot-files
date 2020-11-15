@@ -110,3 +110,7 @@ if [ ! -f "$HOME/bin/runtime/monitor2" ]; then
   touch "$HOME/bin/runtime/monitor2"
 fi
 
+
+if [ -z "$SSH_AGENT_PID" ]; then
+  eval `ssh-agent`;
+fi
