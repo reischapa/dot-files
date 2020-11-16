@@ -2,7 +2,7 @@
 
 set -e
 
-WINDOW_ID=$(xwininfo -tree -root -int | grep "$1" | awk '{print $1}')
+WINDOW_ID="$(c-parse-xwininfo.py "$1" | cut -d'|' -f1)"
 
 if [ -z "$WINDOW_ID" ]; then
   echo "Window with name matching $1 not found. Exiting..."  
@@ -10,7 +10,6 @@ if [ -z "$WINDOW_ID" ]; then
 fi
 
 MSG="[id="$WINDOW_ID"] focus"
-
 
 i3-msg "$MSG"  
 
