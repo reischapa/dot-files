@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+WINDOW_ID=$(xwininfo -tree -root -int | grep "$1" | awk '{print $1}')
+
+if [ -z "$WINDOW_ID" ]; then
+  echo "Window with name matching $1 not found. Exiting..."  
+  exit 0;
+fi
+
+MSG="[id="$WINDOW_ID"] focus"
+
+
+i3-msg "$MSG"  
+
