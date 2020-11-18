@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e;
+
+c-set-keyboard-layout
