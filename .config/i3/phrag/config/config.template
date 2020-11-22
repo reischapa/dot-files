@@ -96,8 +96,9 @@ bindsym XF86AudioMute exec pulsemixer --toggle-mute
 bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -2
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +2
 
-bindsym Mode_switch+u exec --no-startup-id c-focus-window-by-name "KeePass"
+bindsym Mode_switch+u exec --no-startup-id c-focus-window-by-name "Slack |"
 bindsym Mode_switch+i exec --no-startup-id c-focus-window-by-name "- Mozilla Thunderbird"
+bindsym Mode_switch+p exec --no-startup-id c-focus-window-by-name "KeePass"
 bindsym Mode_switch+o exec --no-startup-id c-focus-window-by-name "Discord"
 
 exec --no-startup-id redshift
