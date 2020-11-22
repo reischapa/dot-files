@@ -5,7 +5,7 @@ import sys
 import re
 
 if len(sys.argv) < 2:
-  sys.exit();
+  sys.exit()
 
 output = subprocess.check_output(['xwininfo', '-tree', '-root', '-int']).decode("utf-8")
 
