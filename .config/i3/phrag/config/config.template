@@ -92,6 +92,8 @@ bindsym $mod+0 exec pulsemixer --toggle-mute
 bindsym $mod+minus exec pulsemixer --change-volume -2 
 bindsym $mod+equal exec pulsemixer --change-volume +2
 
+bindsym $mod+b exec c-select-screenshot
+
 bindsym XF86AudioMute exec pulsemixer --toggle-mute 
 bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -2
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +2
