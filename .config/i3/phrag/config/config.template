@@ -104,6 +104,7 @@ bindsym Mode_switch+p exec --no-startup-id c-focus-window-by-name "KeePass"
 bindsym Mode_switch+o exec --no-startup-id c-focus-window-by-name "Discord"
 
 exec --no-startup-id redshift
+exec --no-startup-id picom
 
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id i3-msg workspace number 0 
