@@ -1,0 +1,14 @@
+[Unit]
+Description=c-remap-keyboard-keys-on-connect
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+Environment=DISPLAY=:0
+ExecStart=/home/chapa/bin/c-remap-keyboard-keys-on-connect.py
+
+[Install]
+WantedBy=multi-user.target

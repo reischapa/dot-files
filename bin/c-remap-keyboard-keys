@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-XMODMAP_CONFIG_PATH="$HOME/.config/xmodmap/config"
+set -e;
+
+XMODMAP_CONFIG_PATH="$HOME/.config/xmodmap/config";
 
 if [ -f $XMODMAP_CONFIG_PATH ]; then
-  xmodmap $XMODMAP_CONFIG_PATH
+  xmodmap $XMODMAP_CONFIG_PATH;
   echo "Applied custom key remapping.";
 else 
   echo "Xmodmap config file not found at $XMODMAP_CONFIG_PATH.";
