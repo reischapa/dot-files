@@ -1,13 +1,19 @@
 #!/bin/bash
 
+set -e;
+
 monitor1=`cat $HOME/bin/runtime/monitor1`
 monitor2=`cat $HOME/bin/runtime/monitor2`
 {{placement}}
 
-if  xrandr | grep -q "$monitor2 d"; then
-    xrandr --output "$monitor2" --off
-else
-    xrandr --output "$monitor2" --auto
-    xrandr --output "$monitor1" --auto
-    xrandr --output "$monitor1" "$PLACEMENT" "$monitor2"
+xrandr --output "$monitor1" --auto
+
+if [ "$monitor1" = "$monitor2" ]; then
+  c-one-monitor-output "$monitor1";
+  exit 0
+fi
+
+if [ -n "$(xrandr | grep "$monitor2 connected")" ]; then
+  xrandr --output "$monitor2" --auto
+  xrandr --output "$monitor1" "$PLACEMENT" "$monitor2"
 fi

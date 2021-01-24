@@ -1,10 +1,16 @@
 #!/bin/bash
 
+set -e;
+
 MONITORS=`xrandr | grep -E "DisplayPort|HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}'`
 
 echo "$MONITORS"
 
-CHOSEN_MONITOR=`echo "$MONITORS" | rofi -dmenu -p "Choose monitor: "`
+if [ -n "$1" ]; then
+  CHOSEN_MONITOR="$1"
+else
+  CHOSEN_MONITOR=`echo "$MONITORS" | rofi -dmenu -p "Choose monitor: "`
+fi
 
 echo "$CHOSEN_MONITOR"
 
@@ -13,7 +19,6 @@ if [ -z "$CHOSEN_MONITOR" ]; then
   exit 1;
 fi
 
-xrandr --output "$CHOSEN_MONITOR" --auto `echo "$MONITORS" | grep -v "$CHOSEN_MONITOR" | xargs printf "--output %s --off "` 
-
+xrandr --output "$CHOSEN_MONITOR" --auto $(echo "$MONITORS" | grep -v "$CHOSEN_MONITOR" | xargs printf "--output %s --off ")
 
 
