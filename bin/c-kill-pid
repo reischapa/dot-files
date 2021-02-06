@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e;
+
+while (kill -0 "$1" 2> /dev/null); do
+  kill -9 "$1" 2> /dev/null
+  sleep 0.1
+done
+
+echo "Killed process with pid $1";
+

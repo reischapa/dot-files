@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+PID=$(lsof -t -i:$1 2> /dev/null)
+
+if [ -z $PID ]; then
+  exit 0
+fi
+
+c-kill-pid $PID
+
+echo "Killed process in port $1 with PID $PID";
