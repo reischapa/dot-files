@@ -1,7 +1,3 @@
-#alias vn='vim --cmd "let g:OpenNERDTree=1"'
-#alias v=vim
-#alias clc=clear
-
 function mgs() {
   git status;
 }
@@ -44,4 +40,17 @@ function mgbl() {
 
 function mgsuir() {
   git submodule update --init --recursive;
+}
+
+function mgch() {
+  local branch;
+  branch="$(git branch --all | fzf --height 8 | tr -d [:space:] | sed 's/\*//g' )";
+
+  if [ -z "$branch" ]; then
+    return 0;
+  fi
+
+  echo "Checking out branch $branch...";
+
+  git checkout "$branch"
 }
