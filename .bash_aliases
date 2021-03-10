@@ -41,3 +41,7 @@ function mgl() {
 function mgbl() {
   git branch --list;
 }
+
+function mgsuir() {
+  git submodule update --init --recursive;
+}
