@@ -44,7 +44,7 @@ function mgsuir() {
 
 function mgch() {
   local branch;
-  branch="$(git branch --all | fzf --height 8 | tr -d [:space:] | sed 's/\*//g' )";
+  branch="$(git branch --all --sort=authordate --format='%(refname:short)' | fzf --height=8 --no-sort --tac | tr -d [:space:] | sed 's/\*//g' | sed 's/origin\///g')"
 
   if [ -z "$branch" ]; then
     return 0;
