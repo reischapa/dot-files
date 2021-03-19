@@ -44,7 +44,15 @@ function mgsuir() {
 
 function mgch() {
   local branch;
-  branch="$(git branch --all --sort=authordate --format='%(refname:short)' | fzf --height=8 --no-sort --tac | tr -d [:space:] | sed 's/\*//g' | sed 's/origin\///g')"
+  local querySegment;
+
+  if [ -z "$1" ]; then
+    querySegment=""
+  else
+    querySegment="-q $1"
+  fi
+
+  branch="$(git branch --all --sort=authordate --format='%(refname:short)' | fzf --height=8 --no-sort --tac $(echo "$querySegment" | tr -d [:space:]) | tr -d [:space:] | sed 's/\*//g' | sed 's/origin\///g')"
 
   if [ -z "$branch" ]; then
     return 0;
