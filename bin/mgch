@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+branch="";
+querySegment="";
+
+if [ -z "$1" ]; then
+  querySegment=""
+else
+  querySegment="-q $1"
+fi
+
+branch=$(eval "git branch --all --sort=authordate --format='%(refname:short)' | fzf --height=8 --no-sort --tac "$querySegment"")
+
+processedBranch=$(echo "$branch" | tr -d [:space:] | sed 's/\*//g' | sed 's/origin\///g')
+
+if [ -z "$processedBranch" ]; then
+  exit 0;
+fi
+
+echo "Checking out branch $processedBranch...";
+
+git checkout "$processedBranch"
