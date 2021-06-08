@@ -20,3 +20,7 @@ fi
 echo "Checking out branch $processedBranch...";
 
 git checkout "$processedBranch"
+
+. ~/.bash_aliases
+
+mgsuir
