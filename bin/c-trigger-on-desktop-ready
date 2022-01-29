@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+import os
+import time
+from i3ipc import Connection, Event
+
+# Create the Connection object that can be used to send commands and subscribe
+# to events.
+i3 = Connection()
+
+while True:
+  i3_outputs = i3.get_outputs()
+
+  outputs_string = '|'.join([x.name for x in filter(lambda o: o.active, i3_outputs)])
+
+  if "xroot" not in outputs_string:
+    print("screens ready, triggering c-on-desktop-ready...")
+    os.system("c-on-desktop-ready")
+    break
+
+  time.sleep(1)

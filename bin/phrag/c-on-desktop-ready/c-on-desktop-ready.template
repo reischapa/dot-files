@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+feh --bg-scale $HOME/Pictures/background.jpg
+
+c-setup-touchpad
+c-set-keyboard-layout
+c-polybar-bootstrap &
+
+i3-msg workspace number 0
+
+{{custom}}
+
+

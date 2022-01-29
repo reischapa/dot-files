@@ -30,7 +30,6 @@ python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/.config/polybar
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME/bin
 python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME
 
-chmod a+x ~/bin/c-setup-touchpad
-chmod a+x ~/bin/c-screen-toggle
+chmod a+x ~/bin/c-*
 
 i3-msg reload 
