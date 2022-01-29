@@ -1,0 +1,10 @@
+if [ -z $(command -v xbacklight) ] || [ -z $(xbacklight -get)  ]; then
+  echo "xbacklight either does not work or is not present in this system. Exiting..."
+  exit 0
+fi
+
+if [ "$1" == "increase" ]; then
+  xbacklight - 4 -time 0
+elif [ "$1" == "decrease" ]; then
+  xbacklight + 4 -time 0
+fi

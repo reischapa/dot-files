@@ -82,8 +82,8 @@ bindsym $mod2+Tab workspace back_and_forth
 bindsym $mod+e exec c-screensaver 
 
 bindsym $mod+4 exec c-toggle-laptop-screen-on-off
-bindsym $mod+5 exec xbacklight - 4 -time 0
-bindsym $mod+6 exec xbacklight + 4 -time 0
+bindsym $mod+5 exec c-change-brightness decrease
+bindsym $mod+6 exec c-change-brightness increase
 
 bindsym $mod+7 exec --no-startup-id c-screen-mirror
 bindsym $mod+8 exec --no-startup-id c-screen-toggle
