@@ -110,6 +110,9 @@ if [ ! -f "$HOME/bin/runtime/monitor2" ]; then
   touch "$HOME/bin/runtime/monitor2"
 fi
 
+if [ ! -d "$HOME/.config/dunst" ]; then
+  mkdir -vp "$HOME/.config/dunst"
+fi
 
 if [ -z "$SSH_AGENT_PID" ]; then
   eval `ssh-agent`;
