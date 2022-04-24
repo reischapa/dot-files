@@ -7,8 +7,8 @@ floating_modifier $mod
 new_window pixel 8
 new_float pixel 2
 
-set $monitor1 {{monitor1}} 
-set $monitor2 {{monitor2}}  
+set $monitor1 {{monitor1}}
+set $monitor2 {{monitor2}}
 
 set $ws1 "0: {{workspace0Name}}"
 set $ws2 "1: {{workspace1Name}}"
@@ -104,9 +104,9 @@ exec --no-startup-id picom
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id dunst 
 
-exec_always --no-startup-id c-screen-toggle
-
 exec_always --no-startup-id c-trigger-on-desktop-ready
+
+exec_always --no-startup-id c-screen-toggle
 
 {{customBootCommands}}
 

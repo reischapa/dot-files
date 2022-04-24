@@ -19,6 +19,6 @@ if [ -z "$CHOSEN_MONITOR" ]; then
   exit 1;
 fi
 
-xrandr --output "$CHOSEN_MONITOR" --auto $(echo "$MONITORS" | grep -v "$CHOSEN_MONITOR" | xargs printf "--output %s --off ")
+xrandr --output "$CHOSEN_MONITOR" --auto $(echo "$MONITORS" | grep -v -w "$CHOSEN_MONITOR" | xargs printf "--output %s --off ")
 
 

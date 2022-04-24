@@ -2,18 +2,24 @@
 
 set -e;
 
+MONITORS=`xrandr | grep -E "DisplayPort|HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}'`
+
 monitor1=`cat $HOME/bin/runtime/monitor1`
 monitor2=`cat $HOME/bin/runtime/monitor2`
 {{placement}}
-
-xrandr --output "$monitor1" --auto
 
 if [ "$monitor1" = "$monitor2" ]; then
   c-one-monitor-output "$monitor1";
   exit 0
 fi
 
+xrandr --output "$monitor1" --auto
+
 if [ -n "$(xrandr | grep "$monitor2 connected")" ]; then
-  xrandr --output "$monitor2" --auto
-  xrandr --output "$monitor1" "$PLACEMENT" "$monitor2"
+  xrandr --output "$monitor2" "$PLACEMENT" "$monitor1"
+  xrandr $(echo "$MONITORS" | grep -v -w "$monitor1" | grep -v -w "$monitor2" | xargs printf "--output %s --off ")
+else
+  xrandr $(echo "$MONITORS" | grep -v -w "$monitor1" | xargs printf "--output %s --off ")
 fi
+
+
