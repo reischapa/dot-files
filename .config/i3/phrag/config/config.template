@@ -1,6 +1,6 @@
 set $mod Mod4
 set $mod2 Mod1
-set $term gnome-terminal
+set $term lxterminal
 
 floating_modifier $mod
 
@@ -100,9 +100,7 @@ bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -2
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +2
 
 exec --no-startup-id redshift
-exec --no-startup-id picom
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id dunst 
 
 exec_always --no-startup-id c-trigger-on-desktop-ready
 
