@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-systemctl suspend && c-screensaver
+xset +dpms
+xscreensaver-command -restart
+xscreensaver-command -lock
+sleep 2
+systemctl suspend
