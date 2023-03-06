@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 xset +dpms
-xscreensaver-command -restart
 xscreensaver-command -lock
 sleep 2
 systemctl suspend

@@ -69,7 +69,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+z exec c-start-keepass 
-bindsym $mod+x exec "c-set-keyboard-layout --reset" 
+bindsym $mod+x exec "c-set-keyboard-layout" 
 bindsym $mod+q exec c-set-keyboard-layout
 
 bindsym $mod+c focus child
@@ -104,7 +104,7 @@ exec --no-startup-id xscreensaver -no-splash
 
 exec_always --no-startup-id c-trigger-on-desktop-ready
 
-exec_always --no-startup-id c-screen-toggle
+# exec_always --no-startup-id c-screen-toggle
 
 {{customBootCommands}}
 
