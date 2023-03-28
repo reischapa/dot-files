@@ -114,6 +114,9 @@ if [ ! -d "$HOME/.config/dunst" ]; then
   mkdir -vp "$HOME/.config/dunst"
 fi
 
+eval $(keychain --eval id_rsa --noask -q)
+
 if [ -z "$SSH_AGENT_PID" ]; then
   eval `ssh-agent`;
 fi
+
