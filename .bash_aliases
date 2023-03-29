@@ -42,3 +42,12 @@ function mgsuir() {
   git submodule update --init --recursive;
 }
 
+function mgk() {
+  git restore --staged -- .
+  echo "restore staged"
+}
+
+function mgkk() {
+  git checkout -- .
+  echo "checkout -- ."
+}
