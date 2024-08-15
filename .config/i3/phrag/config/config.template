@@ -110,6 +110,9 @@ exec_always --no-startup-id c-trigger-on-desktop-ready
 
 # exec_always --no-startup-id c-screen-toggle
 
+exec_always --no-startup-id c-picom
+
 {{customBootCommands}}
 
 {{colors}}  
+
