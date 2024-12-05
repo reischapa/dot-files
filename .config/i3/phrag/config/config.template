@@ -81,6 +81,10 @@ bindsym $mod+p reload
 bindsym $mod2+Tab workspace back_and_forth
 bindsym $mod+e exec c-screensaver 
 
+bindsym $mod+Shift+1 exec c-kill-intellij
+bindsym $mod+Shift+2 exec c-kill-slack
+bindsym $mod+Shift+3 exec c-kill-chrome
+
 bindsym $mod+4 exec c-toggle-laptop-screen-on-off
 bindsym $mod+5 exec c-change-brightness decrease
 bindsym $mod+6 exec c-change-brightness increase
