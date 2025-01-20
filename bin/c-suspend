@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+c-use-all-displays
+
 xset +dpms
 xscreensaver-command -lock
 sleep 2
 systemctl suspend
+

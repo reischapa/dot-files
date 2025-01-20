@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+MONITORS=`xrandr | grep -E "DisplayPort|HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}' | sed s/\s+/\n/g ` ;
+
+echo "$MONITORS"

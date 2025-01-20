@@ -2,7 +2,7 @@
 
 set -e;
 
-MONITORS=`xrandr | grep -E "DisplayPort|HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}'`
+MONITORS=`c-list-all-displays`
 
 monitor1=`cat $HOME/bin/runtime/monitor1`
 monitor2=`cat $HOME/bin/runtime/monitor2`

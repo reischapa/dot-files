@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+MONITORS=`c-list-connected-displays`
+
+xrandr $(echo "$MONITORS" | xargs printf "--output %s --auto ")
+
