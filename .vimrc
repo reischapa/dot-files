@@ -54,19 +54,3 @@ command Q qa
 
 silent !stty -ixon
 
-au VimEnter * ALEDisable
-au VimLeave * silent !stty ixon
-
-
-if exists("g:OpenNERDTree") 
-  au VimEnter * NERDTree 
-  au VimEnter * wincmd l 
-endif
-
-execute pathogen#infect()
-
-let g:deoplete#enable_at_startup = 1
-
-let g:ale_fixers = { 'javascript': ['eslint']}
-
-

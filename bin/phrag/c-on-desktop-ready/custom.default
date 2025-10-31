@@ -1,1 +1,1 @@
-picom --config /home/chapa/.config/picom.conf
+c-picom
