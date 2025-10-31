@@ -1,10 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
+import i3ipc
 
-while (true); do
-  WORKSPACE_NAME=$(c-get-focused-workspace name);
+i3 = i3ipc.Connection()
 
-  echo "$WORKSPACE_NAME";
+def on_workspace_focus(i3conn, event):
+    workspace = event.current
+    if workspace:
+        print(workspace.name, flush=True)
 
-  sleep 1;
-done;
-
+i3.on("workspace::focus", on_workspace_focus)
+i3.main()
