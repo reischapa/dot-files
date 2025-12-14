@@ -120,5 +120,7 @@ if [ -z "$SSH_AGENT_PID" ]; then
   eval `ssh-agent`;
 fi
 
-sudo swapon -a
+if findmnt -rn -t swap > /dev/null; then
+  sudo swapon -a
+fi
 
