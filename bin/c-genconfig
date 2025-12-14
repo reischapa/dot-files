@@ -33,3 +33,5 @@ python3 ~/bin/phrag-dir/phrag.py --workingDir $HOME
 chmod a+x ~/bin/c-*
 
 i3-msg reload 
+
+c-on-desktop-ready

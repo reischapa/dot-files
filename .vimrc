@@ -49,4 +49,5 @@ command W w
 command Wa wa
 command Q qa
 
+silent !stty -ixon
 

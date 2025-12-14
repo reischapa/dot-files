@@ -2,9 +2,7 @@
 
 set -e;
 
-MONITORS=`xrandr | grep -E "DisplayPort|HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}'`
-
-echo "$MONITORS"
+MONITORS=`c-list-all-displays`
 
 if [ -n "$1" ]; then
   CHOSEN_MONITOR="$1"
@@ -18,6 +16,7 @@ if [ -z "$CHOSEN_MONITOR" ]; then
   echo "No monitor chosen. Exiting...";
   exit 1;
 fi
+
 
 xrandr --output "$CHOSEN_MONITOR" --auto $(echo "$MONITORS" | grep -v -w "$CHOSEN_MONITOR" | xargs printf "--output %s --off ")
 

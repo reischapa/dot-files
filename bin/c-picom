@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+pkill picom
+pkill compton
+
+if command -v picom >/dev/null 2>&1; then
+  picom &
+else
+  compton &
+fi
+

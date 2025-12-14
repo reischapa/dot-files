@@ -24,7 +24,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-source /usr/share/git/completion/git-prompt.sh
+source $HOME/bin/git-prompt.sh
 
 if [ -f ~/.env_variables ]; then
   source ~/.env_variables
@@ -114,6 +114,11 @@ if [ ! -d "$HOME/.config/dunst" ]; then
   mkdir -vp "$HOME/.config/dunst"
 fi
 
+eval $(keychain --eval id_rsa --noask -q)
+
 if [ -z "$SSH_AGENT_PID" ]; then
   eval `ssh-agent`;
 fi
+
+sudo swapon -a
+

@@ -35,6 +35,7 @@ echo "Selected layout: $CURRENT_KEYBOARD_LAYOUT";
 echo "Selected variant: $CURRENT_KEYBOARD_VARIANT";
 
 setxkbmap $CURRENT_KEYBOARD_LAYOUT $CURRENT_KEYBOARD_VARIANT;
+setxkbmap -option caps:none
 
 if [ "$?" != 0 ]; then
   echo 'Error setting keyboard layout/variant';
