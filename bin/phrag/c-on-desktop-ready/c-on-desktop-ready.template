@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-feh --bg-scale $HOME/Pictures/background.jpg
+feh --bg-max $HOME/Pictures/background.jpg
 
 c-setup-touchpad
 c-set-keyboard-layout
