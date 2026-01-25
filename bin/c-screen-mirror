@@ -15,5 +15,7 @@ fi
 
 xrandr --output "$monitor1" --auto --output "$monitor2" --auto --same-as "$monitor1"
 
+c-on-desktop-ready
+
 
 

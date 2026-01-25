@@ -22,4 +22,6 @@ else
   xrandr $(echo "$MONITORS" | grep -v -w "$monitor1" | xargs printf "--output %s --off ")
 fi
 
+c-on-desktop-ready
+
 

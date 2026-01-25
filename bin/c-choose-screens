@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function getMonitor() {
-  xrandr | grep -E "DisplayPort|HDMI|LVDS|DP|VGA|VIRT" | awk '{split($0, a, " "); print a[1]}' | rofi -dmenu -p "$1"  
+  c-list-all-displays | rofi -dmenu -p "$1"
 }
 
 monitor1=`getMonitor "Monitor 1"`

@@ -2,7 +2,7 @@
 
 set -e;
 
-MONITORS=`c-list-all-displays`
+MONITORS=`c-list-connected-displays`
 
 if [ -n "$1" ]; then
   CHOSEN_MONITOR="$1"
@@ -17,7 +17,8 @@ if [ -z "$CHOSEN_MONITOR" ]; then
   exit 1;
 fi
 
-
 xrandr --output "$CHOSEN_MONITOR" --auto $(echo "$MONITORS" | grep -v -w "$CHOSEN_MONITOR" | xargs printf "--output %s --off ")
+
+c-on-desktop-ready
 
 
