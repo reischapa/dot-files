@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+shopt -s nullglob
+
+pkg="discord"
+targetDir="$HOME/Downloads"
+
+# Collect candidate files
+files=( "$targetDir"/discord-[0-9]*.deb )
+(( ${#files[@]} )) || { echo "No discord-<semver>.deb found in $targetDir" >&2; exit 1; }
+
+latest_ver=$(
+  printf '%s\n' "${files[@]}" | sed -E 's|.*/discord-([0-9]+(\.[0-9]+)*)\.deb|\1|' | sort -V | tail -n 1
+)
+
+latest_deb=$(
+  printf '%s\n' "${files[@]}" | grep -E "/discord-$latest_ver\.deb$"
+)
+
+# Installed version (empty if not installed)
+installed_ver="$(dpkg-query -W -f='${Version}\n' "$pkg" 2>/dev/null || true)"
+
+echo "Latest .deb:       $latest_deb"
+echo "Latest version:    $latest_ver"
+echo "Installed version: ${installed_ver:- <not installed>}"
+
+# Compare versions using dpkg's version comparator
+if [[ -z "$installed_ver" ]] || dpkg --compare-versions "$latest_ver" gt "$installed_ver"; then
+  exec sudo dpkg -i "$latest_deb"
+else
+  echo "No install needed (installed >= latest)."
+fi
+
