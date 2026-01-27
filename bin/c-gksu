@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
-COMMAND='sudo '"$@"''
+set -euo pipefail
 
-$TERMINAL -e "$COMMAND"
+if [[ $# -eq 0 ]]; then
+  echo "usage: c-gksu <command> [args...]" >&2;
+  exit 2;
+fi
+
+SUDO=$(command -v sudo) || { echo "sudo not found" >&2; exit 1; }
+CTERM=$(command -v c-terminal) || { echo "c-terminal not found" >&2; exit 1;}
+
+if [[ -t 0 && -t 1 && -t 2 ]]; then
+  exec "$SUDO" "$@";
+else
+  exec "$CTERM" -e "$SUDO" "$@";
+fi
+
+

@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! curl -fs --max-time 5 https://1.1.1.1 >/dev/null; then
+  echo "No internet connection, exiting..."
+  notify-send "Cannot check Discord version, no internet connection available."
+  exit 0
+fi
+
+pkg="discord"
+url="https://discord.com/api/updates/stable?platform=linux"
+
+echo "will check for discord update..."
+
+remote_ver="$(curl -fsSL "$url" | jq -r '.name')"
+pub_date="$(curl -fsSL "$url" | jq -r '.pub_date')"
+
+installed_ver="$(dpkg-query -W -f='${Version}\n' "$pkg" 2>/dev/null || true)"
+
+if [[ -z "$installed_ver" ]]; then
+  echo "Discord not installed, latest available version is $remote_ver. Exiting...";
+  notify-send "Discord update check" "Discord not installed. Latest available: $remote_ver ($pub_date)"
+  exit 0
+fi
+
+if dpkg --compare-versions "$remote_ver" gt "$installed_ver"; then
+  echo "Discord installed, version $installed_ver, latest available version is $remote_ver.";
+
+  notify-send "Discord update available" "Installed: $installed_ver\nLatest: $remote_ver ($pub_date). Update needed."
+
+  exit 0;
+fi
+
+notify-send "Discord update check finished" "Installed: $installed_ver\nLatest: $remote_ver ($pub_date).
+
+Update not needed."
+
+echo "Discord update check finished, installed ver is $installed_ver, remote ver is $remote_ver.
+
+Update needed.";
+
+

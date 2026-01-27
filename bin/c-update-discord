@@ -25,9 +25,8 @@ echo "Latest .deb:       $latest_deb"
 echo "Latest version:    $latest_ver"
 echo "Installed version: ${installed_ver:- <not installed>}"
 
-# Compare versions using dpkg's version comparator
 if [[ -z "$installed_ver" ]] || dpkg --compare-versions "$latest_ver" gt "$installed_ver"; then
-  exec sudo dpkg -i "$latest_deb"
+  exec c-gksu dpkg -i "$latest_deb"
 else
   echo "No install needed (installed >= latest)."
 fi
