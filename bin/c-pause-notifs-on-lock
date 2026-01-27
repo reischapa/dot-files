@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -eu 
+
+PIDFILE="${XDG_RUNTIME_DIR:-/tmp}/c-pause-notifs-on-lock.pid"
+
+if [ -f "$PIDFILE" ]; then
+  oldpid=$(cat "$PIDFILE" 2>/dev/null || true)
+
+  if [ -n "${oldpid:-}" ] && [ "$oldpid" != "$$" ] && kill -0 "$oldpid" 2>/dev/null; then
+    kill "$oldpid" 2>/dev/null || true
+    sleep 0.1
+    kill -9 "$oldpid" 2>/dev/null || true
+  fi
+
+fi
+
+echo "$$" >"$PIDFILE"
+
+cleanup() {
+  rm -f "$PIDFILE"
+}
+
+trap cleanup INT TERM EXIT
+
+dunstctl set-paused false >/dev/null 2>&1 || true
+
+xscreensaver-command -watch | while IFS= read -r line; do
+  case "$line" in
+    BLANK\ *|LOCK\ *)
+      dunstctl set-paused true >/dev/null 2>&1 || true
+      ;;
+    UNBLANK\ *)
+      dunstctl set-paused false >/dev/null 2>&1 || true
+      ;;
+  esac
+done
+
