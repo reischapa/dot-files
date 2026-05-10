@@ -23,11 +23,13 @@ module-margin-right = 2
 
 font-0 = Liberation Mono:weight=regular:size=8;2
 
-modules-left = memory cpu currently-focused-workspace active-network-interfaces 
+modules-left = tray memory cpu currently-focused-workspace active-network-interfaces 
 {{modulesRight}}
 
-tray-position = left 
-tray-padding = 4 
+[module/tray]
+type = internal/tray
+tray-spacing = 4px
+tray-size = 100%
 
 [module/cpu]
 type = internal/cpu
@@ -118,10 +120,6 @@ format = <label> <bar>
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
