@@ -17,7 +17,12 @@ if [ -z "$CHOSEN_MONITOR" ]; then
   exit 1;
 fi
 
-xrandr --output "$CHOSEN_MONITOR" --auto $(echo "$MONITORS" | grep -v -w "$CHOSEN_MONITOR" | xargs printf "--output %s --off ")
+monitor1Params=$(c-get-xrandr-mode-rate $CHOSEN_MONITOR)
+monitor1Mode=$(echo $monitor1Params | jq '.mode' --raw-output)
+monitor1Rate=$(echo $monitor1Params | jq '.rate' --raw-output)
+
+xrandr $(echo "$MONITORS" | grep -v -w "$CHOSEN_MONITOR" | xargs printf "--output %s --off ")
+xrandr --output "$CHOSEN_MONITOR" --mode $monitor1Mode --rate $monitor1Rate
 
 c-on-desktop-ready
 

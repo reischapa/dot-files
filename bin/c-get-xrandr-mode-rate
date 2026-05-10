@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+#!/usr/bin/env bash
+set -euo pipefail
+
+display="${1:-}"
+
+if [ -z "$display" ]; then
+  echo "{}"
+  exit 1
+fi
+
+best_mode_and_rate="$(
+  xrandr |
+    awk -v display="$display" '
+      $1 == display && $2 == "connected" {
+        in_display = 1
+        next
+      }
+
+      in_display && /^[^[:space:]]/ {
+        in_display = 0
+      }
+
+      in_display && /^[[:space:]]+[0-9]+x[0-9]+/ {
+        mode = $1
+        split(mode, parts, "x")
+
+        width = parts[1] + 0
+        height = parts[2] + 0
+        area = width * height
+
+        for (i = 2; i <= NF; i++) {
+          rate = $i
+          gsub(/[*+]/, "", rate)
+
+          if (rate ~ /^[0-9]+(\.[0-9]+)?$/) {
+            rate_num = rate + 0
+
+            if (area > best_area || (area == best_area && rate_num > best_rate_num)) {
+              best_area = area
+              best_rate_num = rate + 0
+              best_mode = mode
+              best_rate_str = rate
+            }
+          }
+        }
+      }
+
+      END {
+        if (best_mode != "") {
+          print best_mode, best_rate_str
+        }
+      }
+    '
+)"
+
+
+if [ -z "$best_mode_and_rate" ]; then
+  echo "{}"
+  exit 1
+fi
+
+mode="$(echo "$best_mode_and_rate" | awk '{print $1}')"
+rate="$(echo "$best_mode_and_rate" | awk '{print $2}')"
+
+echo  "{\"mode\": "\"$mode\"", \"rate\": "\"$rate\""}"

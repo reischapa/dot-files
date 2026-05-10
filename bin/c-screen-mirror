@@ -13,7 +13,21 @@ if [ "$monitor1" = "$monitor2" ]; then
   exit 0
 fi
 
-xrandr --output "$monitor1" --auto --output "$monitor2" --auto --same-as "$monitor1"
+MONITORS=`c-list-all-displays`
+
+xrandr $(echo "$MONITORS" | grep -v -w "$monitor1" | grep -v -w "$monitor2" | xargs printf "--output %s --off ")
+
+monitor1Params=$(c-get-xrandr-mode-rate $monitor1)
+monitor1Mode=$(echo $monitor1Params | jq '.mode' --raw-output)
+monitor1Rate=$(echo $monitor1Params | jq '.rate' --raw-output)
+
+xrandr --output "$monitor1" --mode $monitor1Mode --rate $monitor1Rate
+
+monitor2Params=$(c-get-xrandr-mode-rate $monitor2)
+monitor2Mode=$(echo $monitor2Params | jq '.mode' --raw-output)
+monitor2Rate=$(echo $monitor2Params | jq '.rate' --raw-output)
+
+xrandr --output "$monitor2" --mode $monitor2Mode --rate $monitor2Rate --same-as $monitor1
 
 c-on-desktop-ready
 

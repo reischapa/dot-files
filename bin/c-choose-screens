@@ -10,3 +10,7 @@ monitor2=`getMonitor "Monitor 2"`
 echo $monitor1 > $HOME/bin/runtime/monitor1
 echo $monitor2 > $HOME/bin/runtime/monitor2
 
+c-genconfig
+
+c-on-desktop-ready
+
