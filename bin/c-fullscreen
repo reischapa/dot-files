@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+mark="c-fullscreen"
+
+marked_window_exists=$(i3-msg -t get_tree | jq -e '.. | objects | select(.marks? | index("'$mark'"))' >/dev/null; echo $?)
+
+echo $marked_window_exists;
+
+if [ $marked_window_exists -eq 0 ]; then
+  echo "found marked window"
+
+  i3-msg '[con_mark="'$mark'"] focus'
+  i3-msg 'border pixel 4'
+  i3-msg 'floating disable'
+  i3-msg 'unmark '$mark'' 
+ 
+  exit 0;
+fi
+
+echo "did not find marked window, proceeding with fullscreen..."
+
+focused_json="$(i3-msg -t get_tree | jq '.. | objects | select(.focused? == true)')"
+
+output_name="$(jq -r '.output' <<< "$focused_json")"
+
+if [[ -z "$output_name" || "$output_name" == "null" ]]; then
+  echo "Could not determine focused window output" >&2
+  exit 1
+fi
+
+output_json="$(i3-msg -t get_outputs | jq --arg name "$output_name" '.[] | select(.name == $name)')"
+
+x="$(jq -r '.rect.x' <<< "$output_json")"
+y="$(jq -r '.rect.y' <<< "$output_json")"
+w="$(jq -r '.rect.width' <<< "$output_json")"
+h="$(jq -r '.rect.height' <<< "$output_json")"
+
+echo "x: $x, y:$y, w:$w, h:$h"
+
+i3-msg "mark $mark"
+
+i3-msg "border pixel 0"
+i3-msg "floating enable"
+i3-msg "resize set ${w} px ${h} px"
+i3-msg "move position ${x} px ${y} px"
+

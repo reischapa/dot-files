@@ -66,7 +66,8 @@ bindsym $mod+slash exec "rofi -show window"
 bindsym $mod+q exec c-b
 bindsym $mod+Shift+q exec i3-msg split v && c-b
 
-bindsym $mod+r fullscreen toggle
+bindsym $mod+r exec c-fullscreen 
+bindsym $mod+Shift+r fullscreen toggle
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
