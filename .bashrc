@@ -76,6 +76,10 @@ PATH=$HOME/bin/n-dir/bin:$HOME/bin:$PATH
 PATH=$HOME/.npm_modules/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
 
+if [ -d "$HOME/.local/share/JetBrains/Toolbox" ]; then
+  export PATH="$PATH:/home/chapa/.local/share/JetBrains/Toolbox/scripts"
+fi
+
 if [ -f ~/.fzf.bash ]; then
   source ~/.fzf.bash
 elif [ -f /usr/share/fzf/key-bindings.bash ]; then
@@ -114,11 +118,15 @@ if [ ! -d "$HOME/.config/dunst" ]; then
   mkdir -vp "$HOME/.config/dunst"
 fi
 
-eval $(keychain --eval id_rsa --noask -q)
-
-if [ -z "$SSH_AGENT_PID" ]; then
-  eval `ssh-agent`;
+if command -v keychain > /dev/null 2>&1; then
+  if [ -f $HOME/id_rsa ]; then
+    eval $(keychain --eval id_rsa --noask -q)
+  elif [ -f $HOME/id_ed25519 ]; then
+    eval $(keychain --eval id_ed25519 --noask -q)
+  fi
+else
+  if [ -z "$SSH_AGENT_PID" ]; then
+    eval `ssh-agent`;
+  fi
 fi
-
-sudo swapon -a
 
