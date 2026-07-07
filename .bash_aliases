@@ -58,7 +58,7 @@ function mgsup() {
   echo "Will set up remote branch for branch $branch at $(git remote)/$branch"
   output=$(git push 2>&1 | grep "git push" | sed -e 's/[[:space:]]/ /g' | sed -E 's/^[[:space:]]+//g')
   echo "command that will be executed: $output"
-  read -rp "Continue? [y/N] " answer && [[ "$answer" =~ ^[Yy]([Ee][Ss])?$ ]] || exit 1
+  read -rp "Continue? [y/N] " answer && [[ "$answer" =~ ^[Yy]([Ee][Ss])?$ ]] || return;
   eval "$output"
 }
 
