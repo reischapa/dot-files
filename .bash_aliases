@@ -51,3 +51,13 @@ function mgkk() {
   git checkout -- .
   echo "checkout -- ."
 }
+
+function mgsup() {
+  branch=$(git branch --show)
+
+  echo "Will set up remote branch for branch $branch at $(git remote)/$branch"
+  read -rp "Continue? [y/N] " answer && [[ "$answer" =~ ^[Yy]([Ee][Ss])?$ ]] || exit 1
+  output=$(git push 2>&1 | grep "git push" | sed -e 's/[[:space:]]/ /g' | sed -E 's/^[[:space:]]+//g')
+  eval "$output"
+}
+
